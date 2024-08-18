@@ -4,9 +4,29 @@
     "href": "index.html",
     "title": "Math Camp 2024",
     "section": "",
-    "text": "Why are we here?\nWelcome to. the Math Camp 2024, organised by the Department of Government, Georgetown University.\nYou can find the course syllabus and material from classes here.\nClasses would take place between 9 - 4 pm in ICC 234.\nThis week will learn two things:\n\nSome Maths\nSome Programming on R\n\nBoth of these parts are meant to be introductory/review preparing you for basic fluency in quantitative tools that would come in handy in different courses.\nThis website would largely concern with material on R and LaTeX. We would use RStudio for working with these.\nUse the link here to install RStudio on your systems.",
+    "text": "Welcome to the Math Camp 2024, organised by the Department of Government, Georgetown University.",
     "crumbs": [
-      "Why are we here?"
+      "Instructors"
+    ]
+  },
+  {
+    "objectID": "index.html#instructors",
+    "href": "index.html#instructors",
+    "title": "Math Camp 2024",
+    "section": "Instructors",
+    "text": "Instructors\nMohammad Hashem Krayem\n\nPh.D. Student (3rd Year), International Relations\nmhk62@georgetown.edu\n\nParushya,\n\nPh.D. Student (3rd Year), Comparative Government\npp714@georgetown.edu",
+    "crumbs": [
+      "Instructors"
+    ]
+  },
+  {
+    "objectID": "index.html#acknowledgments",
+    "href": "index.html#acknowledgments",
+    "title": "Math Camp 2024",
+    "section": "Acknowledgments",
+    "text": "Acknowledgments\nThanks to Henry Watson and Ankushi Mitra for sharing the teaching material from previous editions of Maths Camp.",
+    "crumbs": [
+      "Instructors"
     ]
   },
   {
@@ -14,9 +34,19 @@
     "href": "intro.html",
     "title": "Introduction",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "You can find the course syllabus and material from classes here.\nClasses would take place between 9 - 4 pm in ICC 234.\nThis week will learn two things:\n\nSome Maths\nSome Programming on R\n\nBoth of these parts are meant to be introductory/review preparing you for basic fluency in quantitative tools that would come in handy in different courses.\nThis website would largely concern with material on R and LaTeX. We would use RStudio for working with these.",
     "crumbs": [
       "Introduction"
+    ]
+  },
+  {
+    "objectID": "day1.html",
+    "href": "day1.html",
+    "title": "Day 1",
+    "section": "",
+    "text": "Use the link here to install RStudio on your systems.",
+    "crumbs": [
+      "Day 1"
     ]
   },
   {
@@ -37,16 +67,6 @@
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
     "crumbs": [
       "Summary"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
-    "crumbs": [
-      "References"
     ]
   }
 ]
