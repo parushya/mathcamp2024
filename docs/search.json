@@ -4,9 +4,9 @@
     "href": "index.html",
     "title": "Math Camp 2024",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "text": "Why are we here?\nWelcome to. the Math Camp 2024, organised by the Department of Government, Georgetown University.\nYou can find the course [syllabus and material from classes here] (https://georgetown.app.box.com/folder/280530661466?s=wzonmybotewi5unhs9jmszvhwbgewtdq).\nClasses would take place between 9 - 4 pm in ICC 234.\nThis week will learn two things:\n\nSome Maths\nSome Programming on R\n\nBoth of these parts are meant to be introductory/review preparing you for basic fluency in quantitative tools that would come in handy in different courses.\nThis website would largely concern with material on R and LaTeX. We would use RStudio for working with these.\nUse the [link here] (https://rstudio-education.github.io/hopr/starting.html) to install RStudio on your systems.",
     "crumbs": [
-      "Preface"
+      "Why are we here?"
     ]
   },
   {
