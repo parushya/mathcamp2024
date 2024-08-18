@@ -77,7 +77,6 @@ rsconnect/
 *.gz
 *.gz(busy)
 *.synctex(busy)
-*.png
 *.txt
 
 # Latex files
@@ -98,7 +97,6 @@ rsconnect/
 *.gz
 *.gz(busy)
 *.synctex(busy)
-*.png
 *.txt
 
 # Overleaf files
