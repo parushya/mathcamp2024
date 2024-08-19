@@ -168,19 +168,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./day3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Day 3</span></a>
+ <span class="menu-text">Day 3 - R for Analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./day4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Day 4</span></a>
+ <span class="menu-text">Day 4 - Quarto and LaTeX</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./day5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Day 5</span></a>
+ <span class="menu-text">Day 5 File Management and Workflow</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -275,6 +275,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="basics" class="level2">
 <h2 class="anchored" data-anchor-id="basics">Basics</h2>
+<p>R uses <code>&lt;-</code> as the assignment operator. To the left of it is an object (sort of like a box that stores values which are to the right of the operator).</p>
+<p><strong>Syntax</strong>: object &lt;- value/data</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><span style="color:#1696d2;">Exercise 1</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><span style="color:#1696d2;">Code 1</span></a></li></ul>
 <div class="tab-content">
@@ -290,17 +292,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Prints your name</p></li>
 </ul>
 <ol start="3" type="1">
-<li><p>Run each command separately by using <code>cmd + Enter</code>.</p></li>
-<li><p>Assign the outputs from <strong>2</strong> to diffferent objects.</p></li>
-<li><p>Print the objects with description using <code>paste()</code>.</p></li>
+<li><p>Run each command separately by using <code>cmd + Enter / ctrl + Enter</code>.</p></li>
+<li><p>Assign the outputs from <strong>2</strong> to different objects.</p></li>
+<li><p>Print the objects with some description using <code>paste()</code>.</p></li>
 <li><p>Run the whole file.</p></li>
 </ol>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>You can start a new script through many different ways:<br>
-1. ctrl+shift+n 2. Click on the tiny white page button with a green+sign on the upper left 3. Click on File&gt;New file&gt; R script</p>
-<p>Saving a script:<br>
-1. ctrl+s 2. enter the name of the script, and add “.r” as a suffix. For example: xyzbasic.r</p>
+<p>You can start a new script through many different ways:</p>
+<ol type="1">
+<li><p><code>ctrl + shift + n</code></p></li>
+<li><p>Click on the tiny white page button with a green+sign on the upper left corner of the screen</p></li>
+<li><p>Click on <code>File &gt; New file&gt; R script</code></p></li>
+</ol>
+<p>Saving a script:</p>
+<ol type="1">
+<li><p><code>Ctrl + S</code></p></li>
+<li><p>Enter the name of the script, and add <code>.R</code> as a suffix. For example: xyzbasic.R</p></li>
+</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#2. </span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">7</span></span>
@@ -320,7 +329,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="st">"parushya"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>R uses <code>&lt;-</code> as the assignment operator. To the left of it is an object (sort of like a box that stores values which are to the right of the operator).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#5</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -377,7 +385,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>This is a highly recommended book written by creators of tidyverse.</li>
 </ul></li>
 </ul>
-<ol start="2" type="1">
+<ol start="3" type="1">
 <li>Tutorials for R Programming</li>
 </ol>
 <ul>
@@ -812,8 +820,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./day3.html" class="pagination-link" aria-label="Day 3">
-        <span class="nav-page-text">Day 3</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./day3.html" class="pagination-link" aria-label="Day 3 - R for Analysis">
+        <span class="nav-page-text">Day 3 - R for Analysis</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
