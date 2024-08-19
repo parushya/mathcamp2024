@@ -36,119 +36,16 @@ vignettes/*.pdf
 *.utf8.md
 *.knit.md
 
-# R Environment Variables
-.Renviron
-
-# pkgdown site
-#docs/
 
 # translation temp files
 po/*~
 
-# RStudio Connect folder
-rsconnect/
-
-* Data folder
-*/raw/
-*/clean/
-
-* File Types
-*.pdf
-*.csv
-*.xlsx
-*.RData
-*.rds
-
-# Latex files
-*.aux
-*.log
-*.out
-*.bbl
-*.blg
-*.nav
-*.snm
-*.toc
-*.gz
-*.fdb_latexmk
-*.fls
-*.lof
-*.lot
-*.sta
-*.gz
-*.gz(busy)
-*.synctex(busy)
-*.txt
-
-# Latex files
-*.aux
-*.log
-*.out
-*.bbl
-*.blg
-*.nav
-*.snm
-*.toc
-*.gz
-*.fdb_latexmk
-*.fls
-*.lof
-*.lot
-*.sta
-*.gz
-*.gz(busy)
-*.synctex(busy)
-*.txt
-
-# Overleaf files
-*.bcf
-*.run
-*.xml
-
-# R files
-*.Rproj.user
-*.Rhistory
-*.Rapp.history
-*.rds
-*.rda
-*.Rdata
-
-# Stata files
-*.dta
-*.gz
-
-# Data files
-*.csv
-*.dbf
-*.shp
-*.prj
-*.shx
-*.sbn
-*.xlsx
-*.xls
-
-# Microsoft Office Files
-*.docx
-*.doc
-
-# Sublime Files
-*.sublime-workspace
-*.sublime-project
-
-# Media Files
-*.m4a
-*.mp4
-
-# Miscellaneous
-*.zip
-*.dropbox
-*.sbx
-*.ini
-*.DS_Store
-*.here
-#*.pdf
-#*.html
-*.missRecode
-
-*.js
-
+# quarto files
 /.quarto/
+/_site/
+
+# cached_files:
+*_cache*
+
+# environment file for quarto (render)
+_environment
