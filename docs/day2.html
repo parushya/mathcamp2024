@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math Camp 2024 - Day 2</title>
+<title>Math Camp 2024 - Day 2 - R Basics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -82,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./day2.html">Day 2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./day2.html">Day 2 - R Basics</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -122,13 +156,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./day1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Day 1</span></a>
+ <span class="menu-text">Day 1 - Software</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./day2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Day 2</span></a>
+ <span class="menu-text">Day 2 - R Basics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -171,7 +205,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#rstudio" id="toc-rstudio" class="nav-link active" data-scroll-target="#rstudio">RStudio</a></li>
+  <li><a href="#why-code" id="toc-why-code" class="nav-link active" data-scroll-target="#why-code">Why Code?</a></li>
+  <li><a href="#r-and-rstudio" id="toc-r-and-rstudio" class="nav-link" data-scroll-target="#r-and-rstudio">R and RStudio</a></li>
+  <li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics">Basics</a></li>
+  <li><a href="#additional-links" id="toc-additional-links" class="nav-link" data-scroll-target="#additional-links">Additional Links</a></li>
   </ul>
 </nav>
     </div>
@@ -180,7 +217,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Day 2</h1>
+<h1 class="title">Day 2 - R Basics</h1>
 </div>
 
 
@@ -197,19 +234,137 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="rstudio">RStudio</h2>
+<p><img src="excel.webp" class="img-fluid" width="650"></p>
+<section id="why-code" class="level2">
+<h2 class="anchored" data-anchor-id="why-code">Why Code?</h2>
+<p>A lot of diplomatic and fancy answers to it. But the key idea is that you want to be lazy about repetitive tasks (<em>MBAs</em> call it being “productive”).</p>
+<p>Many tasks - data cleaning, wrangling, visualization and statistical analysis - require you to do them many times. Moreover, you would want to be able to reproduce and replicate your thinking about all of the tasks mentioned above on many different datasets and sometime even on the same dataset after some time.</p>
+<p>Coding is about formalizing your thinking about how you are treating the data and automating the formalization task to be done repetitively. It improves efficiency, enhances reproducability, and boosts creativity when it comes to finding new patterns in your data.</p>
+<p>Six guidelines for data and statistical analyses:<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<ol type="1">
+<li><strong>Accuracy</strong>: Write a code that reduces chances of making an error and lets you catch one if it occurs.</li>
+<li><strong>Efficiency</strong>: If you are doing it twice, see the pattern of your decision making and formalize it in your code. <em>Difference between Excel and coding</em></li>
+<li><strong>Replicate-and-Reproduce</strong>: Ability to repeat the computational process which reflects your thinking and decisions that you took along the way. Improves transparency and forces one to be deliberate and responsible about choices during analyses.<br>
+</li>
+<li><strong>Human Interpretability</strong>: Writing code is not just to analyse but allowing yourself and then others to be able to understand your analytic choices.<br>
+</li>
+<li><strong>Public Good</strong>: Research is a public good. And the code allows your research to be truly accessible. This means you write a code that anyone else who understands the language can read, reuse, and recreate without you being present. We essentially ensure that by writing a readable and publicly readable code.</li>
+</ol>
+</section>
+<section id="r-and-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="r-and-rstudio">R and RStudio</h2>
+<p>R is a free open source statistical programming language. We generally use R thorugh RStudio which is an integrated development environment (IDE). Essentially, it is the graphic user interface that allows us to use R in an efficient way. It has point-and-click functionality also (which we would not use a lot).</p>
 <div class="cell">
 <div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="rstudio.png" class="img-fluid figure-img" width="734"></p>
+<figcaption>RStudio Screen</figcaption>
 </figure>
 </div>
 </div>
 </div>
+<p><strong>R Scripts</strong>: This is where put your code in a script. The script is saved with a <code>.R</code> extension.<br>
+<strong>Console</strong>: Output from your code appears here. You can also write the code directly here. But it does not get saved. Also, by default it shows only a limited number or previous steps (commands + outputs). Not a good practice to code here.<br>
+<strong>Environment</strong>: All the objects, datasets, lists, etc that you have created/loaded in the environment appear here. Alongside, you also see the custom functions that you might create.<br>
+<strong>File Browser/Help/Plot</strong>: Internal file navigators and help documentation for packages and functions appear here. Further, when you plot anything, that also get shown here.</p>
+<p>An R script is a basic text file which you can read on text editors too. We use RStudio to run the code in a way that computer understands.</p>
+<p><strong>Comments</strong>: R inteprets every line in the script as a separate command. And it does for each line unless preceded by a <code>#</code>. Comments signal to R that what follows the <code>#</code> is to be ignored.</p>
+<p>We use comments to write explanatory notes about the code. A comment should explain the purpose of a command or code and not just be a description of what it does.</p>
+</section>
+<section id="basics" class="level2">
+<h2 class="anchored" data-anchor-id="basics">Basics</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><span style="color:#1696d2;">Exercise 1</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><span style="color:#1696d2;">Code 1</span></a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<ol type="1">
+<li>Create a new <code>.R</code> script. Name it and save it on your system.<br>
+</li>
+<li>R does all the functions of a calculator. Write some code in the script that</li>
+</ol>
+<ul>
+<li><p>Adds two numbers</p></li>
+<li><p>Multiplies three numbers</p></li>
+<li><p>Prints your name</p></li>
+</ul>
+<ol start="3" type="1">
+<li><p>Run each command separately by using <code>cmd + Enter</code>.</p></li>
+<li><p>Assign the outputs from <strong>2</strong> to diffferent objects.</p></li>
+<li><p>Print the objects with description using <code>paste()</code>.</p></li>
+<li><p>Run the whole file.</p></li>
+</ol>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#2. </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">7</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dv">56</span> <span class="sc">*</span> <span class="dv">9</span> <span class="sc">*</span> <span class="dv">33</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Parushya"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The output is displayed in the console.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#4</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>sum_2 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">7</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>prod_3 <span class="ot">&lt;-</span> <span class="dv">56</span> <span class="sc">*</span> <span class="dv">9</span> <span class="sc">*</span> <span class="dv">33</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="st">"parushya"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>R uses <code>&lt;-</code> as the assignment operator. To the left of it is an object (sort of like a box that stores values which are to the right of the operator).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#5</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"Sum of 2 and 7 is"</span>, sum_2)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"Product of 56, 9 and 33 is"</span>, prod_3)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"This very fancy R code was written by"</span>, name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="additional-links" class="level1">
+<h1>Additional Links</h1>
+<ol type="1">
+<li>On Coding Practices</li>
+</ol>
+<ul>
+<li><p><a href="https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf">Code and Data for the Social Sciences:A Practitioner’s Guide, by Gentzkow and Shapiro</a></p></li>
+<li><p><a href="https://style.tidyverse.org/index.html">R Tidyverse Coding Style Guide</a></p></li>
+<li><p><a href="https://www.jakebowers.org/PAPERS/tpm_v18_n2.pdf">Political Methodologist Perspective</a></p></li>
+</ul>
+<ol start="2" type="1">
+<li>On Tidyverse</li>
+</ol>
+<ul>
+<li><p><a href="https://r4ds.hadley.nz/">R for DataScience, by Hadley Wickham et al.</a></p>
+<ul>
+<li>This is a highly recommended book written by creators of tidyverse.</li>
+</ul></li>
+</ul>
+<ol start="2" type="1">
+<li>Tutorials for R Programming</li>
+</ol>
+<ul>
+<li><a href="https://discdown.org/rprogramming/index.html">Intro to R Programming</a></li>
+<li><a href="https://intro2r.com/">Another Intro to R</a></li>
+</ul>
+<p><a href="https://posit.co/resources/cheatsheets/">R Cheatsheets Link</a></p>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Inspired by the summary provided by Prof <a href="https://aaronrwilliams.com/about">Aaron Williams</a>’ course on Data Analysis offered at McCourt School. Strongly recommended to learn good coding using R<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -624,8 +779,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./day1.html" class="pagination-link" aria-label="Day 1">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Day 1</span>
+      <a href="./day1.html" class="pagination-link" aria-label="Day 1 - Software">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Day 1 - Software</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

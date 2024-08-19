@@ -42,41 +42,81 @@
   {
     "objectID": "day1.html",
     "href": "day1.html",
-    "title": "Day 1",
+    "title": "Day 1 - Software",
     "section": "",
     "text": "Math Session\nNotation, Functions, and Limits\nLinks",
     "crumbs": [
-      "Day 1"
+      "Day 1 - Software"
     ]
   },
   {
     "objectID": "day1.html#math-session",
     "href": "day1.html#math-session",
-    "title": "Day 1",
+    "title": "Day 1 - Software",
     "section": "",
     "text": "Measurement and notation\nReview Basic Algebra\nFunctions\nLimits and Series\n\n\n\nLecture slides here\nProblem set here",
     "crumbs": [
-      "Day 1"
+      "Day 1 - Software"
     ]
   },
   {
     "objectID": "day1.html#software-session",
     "href": "day1.html#software-session",
-    "title": "Day 1",
+    "title": "Day 1 - Software",
     "section": "Software Session",
     "text": "Software Session\nWe will be getting started with the following installations today:\n\nR - Statistical Programming Language\nRStudio - Interactive Development Environment for R\nStata - Statistical Software Package (the “other” one)\nZotero - Reference Management Tool\nGitHub - Storing code online with version control\n\n\nR and R Studio\nUse the link here to install RStudio on your systems.\n\n\nStata\nStata is a paid software. Georgetown provides download option through the university webstore here.\n\n\nZotero\nZotero is a reference management tools. It allows you to maintain a structured bibliography. Its integration with various web browsers and software like MS Word and R, makes it a fantastic tool for keeping track of readings as well as citing them.\n\n\n\n\n\nZotero Folder\n\n\n\n\n\nMake Zotero Account.\nAdd a connector to the browser (For eg, zotero connector for google chrome).\nDownload Zotero Desktop App here.\nConnect Zotero to R Studio. (We will do this step on Day 5, using the link here).\n\n\n\nGitHub\nMake your account here",
     "crumbs": [
-      "Day 1"
+      "Day 1 - Software"
     ]
   },
   {
     "objectID": "day2.html",
     "href": "day2.html",
-    "title": "Day 2",
+    "title": "Day 2 - R Basics",
     "section": "",
-    "text": "RStudio",
+    "text": "Why Code?\nA lot of diplomatic and fancy answers to it. But the key idea is that you want to be lazy about repetitive tasks (MBAs call it being “productive”).\nMany tasks - data cleaning, wrangling, visualization and statistical analysis - require you to do them many times. Moreover, you would want to be able to reproduce and replicate your thinking about all of the tasks mentioned above on many different datasets and sometime even on the same dataset after some time.\nCoding is about formalizing your thinking about how you are treating the data and automating the formalization task to be done repetitively. It improves efficiency, enhances reproducability, and boosts creativity when it comes to finding new patterns in your data.\nSix guidelines for data and statistical analyses:1",
     "crumbs": [
-      "Day 2"
+      "Day 2 - R Basics"
+    ]
+  },
+  {
+    "objectID": "day2.html#why-code",
+    "href": "day2.html#why-code",
+    "title": "Day 2 - R Basics",
+    "section": "",
+    "text": "Accuracy: Write a code that reduces chances of making an error and lets you catch one if it occurs.\nEfficiency: If you are doing it twice, see the pattern of your decision making and formalize it in your code. Difference between Excel and coding\nReplicate-and-Reproduce: Ability to repeat the computational process which reflects your thinking and decisions that you took along the way. Improves transparency and forces one to be deliberate and responsible about choices during analyses.\n\nHuman Interpretability: Writing code is not just to analyse but allowing yourself and then others to be able to understand your analytic choices.\n\nPublic Good: Research is a public good. And the code allows your research to be truly accessible. This means you write a code that anyone else who understands the language can read, reuse, and recreate without you being present. We essentially ensure that by writing a readable and publicly readable code.",
+    "crumbs": [
+      "Day 2 - R Basics"
+    ]
+  },
+  {
+    "objectID": "day2.html#r-and-rstudio",
+    "href": "day2.html#r-and-rstudio",
+    "title": "Day 2 - R Basics",
+    "section": "R and RStudio",
+    "text": "R and RStudio\nR is a free open source statistical programming language. We generally use R thorugh RStudio which is an integrated development environment (IDE). Essentially, it is the graphic user interface that allows us to use R in an efficient way. It has point-and-click functionality also (which we would not use a lot).\n\n\n\n\n\nRStudio Screen\n\n\n\n\nR Scripts: This is where put your code in a script. The script is saved with a .R extension.\nConsole: Output from your code appears here. You can also write the code directly here. But it does not get saved. Also, by default it shows only a limited number or previous steps (commands + outputs). Not a good practice to code here.\nEnvironment: All the objects, datasets, lists, etc that you have created/loaded in the environment appear here. Alongside, you also see the custom functions that you might create.\nFile Browser/Help/Plot: Internal file navigators and help documentation for packages and functions appear here. Further, when you plot anything, that also get shown here.\nAn R script is a basic text file which you can read on text editors too. We use RStudio to run the code in a way that computer understands.\nComments: R inteprets every line in the script as a separate command. And it does for each line unless preceded by a #. Comments signal to R that what follows the # is to be ignored.\nWe use comments to write explanatory notes about the code. A comment should explain the purpose of a command or code and not just be a description of what it does.",
+    "crumbs": [
+      "Day 2 - R Basics"
+    ]
+  },
+  {
+    "objectID": "day2.html#basics",
+    "href": "day2.html#basics",
+    "title": "Day 2 - R Basics",
+    "section": "Basics",
+    "text": "Basics\n\nExercise 1Code 1\n\n\n\nCreate a new .R script. Name it and save it on your system.\n\nR does all the functions of a calculator. Write some code in the script that\n\n\nAdds two numbers\nMultiplies three numbers\nPrints your name\n\n\nRun each command separately by using cmd + Enter.\nAssign the outputs from 2 to diffferent objects.\nPrint the objects with description using paste().\nRun the whole file.\n\n\n\n\n#2. \n2 + 7\n\n56 * 9 * 33\n\nprint(\"Parushya\")\n\nThe output is displayed in the console.\n\n#4\n\n\nsum_2 &lt;- 2 + 7\n\nprod_3 &lt;- 56 * 9 * 33\n\nname &lt;- \"parushya\"\n\nR uses &lt;- as the assignment operator. To the left of it is an object (sort of like a box that stores values which are to the right of the operator).\n\n#5\n\npaste(\"Sum of 2 and 7 is\", sum_2)\n\npaste(\"Product of 56, 9 and 33 is\", prod_3)\n\npaste(\"This very fancy R code was written by\", name)",
+    "crumbs": [
+      "Day 2 - R Basics"
+    ]
+  },
+  {
+    "objectID": "day2.html#footnotes",
+    "href": "day2.html#footnotes",
+    "title": "Day 2 - R Basics",
+    "section": "",
+    "text": "Inspired by the summary provided by Prof Aaron Williams’ course on Data Analysis offered at McCourt School. Strongly recommended to learn good coding using R↩︎",
+    "crumbs": [
+      "Day 2 - R Basics"
     ]
   },
   {
