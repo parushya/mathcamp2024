@@ -208,7 +208,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#math-session" id="toc-math-session" class="nav-link active" data-scroll-target="#math-session">Math Session</a></li>
   <li><a href="#software-session" id="toc-software-session" class="nav-link" data-scroll-target="#software-session">Software Session</a>
   <ul class="collapse">
-  <li><a href="#why-code" id="toc-why-code" class="nav-link" data-scroll-target="#why-code">Why Code?</a></li>
+  <li><a href="#why-programming-or-coding" id="toc-why-programming-or-coding" class="nav-link" data-scroll-target="#why-programming-or-coding">Why Programming or Coding?</a></li>
   <li><a href="#r-and-rstudio" id="toc-r-and-rstudio" class="nav-link" data-scroll-target="#r-and-rstudio">R and RStudio</a></li>
   <li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics">Basics</a></li>
   <li><a href="#objects-datatypes-and-data-structures" id="toc-objects-datatypes-and-data-structures" class="nav-link" data-scroll-target="#objects-datatypes-and-data-structures">Objects, Datatypes, and Data Structures</a>
@@ -258,8 +258,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="software-session" class="level1">
 <h1>Software Session</h1>
-<section id="why-code" class="level2">
-<h2 class="anchored" data-anchor-id="why-code">Why Code?</h2>
+<section id="why-programming-or-coding" class="level2">
+<h2 class="anchored" data-anchor-id="why-programming-or-coding">Why Programming or Coding?</h2>
 <p>There are a lot of fancy answers to it. But the key idea is that you want to be lazy about repetitive tasks (<em>MBAs</em> call it being “productive”).</p>
 <p>Many tasks - data cleaning, wrangling, visualization, and statistical analysis - require you to do them many times. Moreover, you would want to be able to reproduce and replicate your thinking about all of the tasks mentioned above on many different datasets and sometimes even on the same dataset after some time.</p>
 <p>Coding is about formalizing your thinking about how you treat the data and automating the formalization task to be done repetitively. It improves efficiency, enhances reproducibility, and boosts creativity when it comes to finding new patterns in your data.</p>
@@ -271,7 +271,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
 <li><strong>Human Interpretability</strong>: Writing code is not just about analyzing but allowing yourself and then others to be able to understand your analytic choices.<br>
 </li>
-<li><strong>Public Good</strong>: Research is a public good. And the code allows your research to be truly accessible. This means you write a code that anyone else who understands the language can read, reuse, and recreate without you being present. We essentially ensure that by writing a readable and publicly readable code.</li>
+<li><strong>Public Good</strong>: Research is a public good. And the code allows your research to be truly accessible. This means you write a code that anyone else who understands the language can read, reuse, and recreate without you being present. We essentially ensure that by writing a readable and ideally publicly accessible code.</li>
 </ol>
 </section>
 <section id="r-and-rstudio" class="level2">
@@ -287,13 +287,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p><strong>R Scripts</strong>: This is where put your code in a script. The script is saved with a <code>.R</code> extension.<br>
+<p><strong>R Scripts</strong>: This is where put your code in a script. The script is saved with a <code>.R</code> extension. An R script is a text file that you can read on text editors too. We use RStudio to run the code in a way that the computer understands.<br>
 <strong>Console</strong>: Output from your code appears here. You can also write the code directly here. But it does not get saved. Also, by default, it shows only a limited number of previous steps (commands + outputs). Not a good practice to code here.<br>
 <strong>Environment</strong>: All the objects, datasets, lists, etc that you have created/loaded in the environment appear here. Alongside, you also see the custom functions that you might create.<br>
-<strong>File Browser/Help/Plot</strong>: Internal file navigators and help documentation for packages and functions appear here. Further, when you plot anything, that also gets shown here.</p>
-<p>An R script is a text file that you can read on text editors too. We use RStudio to run the code in a way that the computer understands.</p>
-<p><strong>Comments</strong>: R interprets every line in the script as a separate command. And it does for each line unless preceded by a <code>#</code>. Comments signal to R that what follows the <code>#</code> is to be ignored.</p>
-<p>We use comments to write explanatory notes about the code. A comment should explain the purpose of a command or code and not just be a description of what it does.</p>
+<strong>File Browser/Help/Plot</strong>: Internal file navigator and help documentation for packages and functions appear here. Further, when you plot anything, that also gets shown here.<br>
+<strong>Comments</strong>: R interprets every line in the script as a separate command. And it does for each line unless preceded by a <code>#</code>. Comments signal to R that what follows the <code>#</code> is to be ignored.We use comments to write explanatory notes about the code. A comment should explain the purpose of a command or code and not just be a description of what it does.</p>
 </section>
 <section id="basics" class="level2">
 <h2 class="anchored" data-anchor-id="basics">Basics</h2>
