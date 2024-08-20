@@ -260,23 +260,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Software Session</h1>
 <section id="why-code" class="level2">
 <h2 class="anchored" data-anchor-id="why-code">Why Code?</h2>
-<p>A lot of diplomatic and fancy answers to it. But the key idea is that you want to be lazy about repetitive tasks (<em>MBAs</em> call it being “productive”).</p>
-<p>Many tasks - data cleaning, wrangling, visualization and statistical analysis - require you to do them many times. Moreover, you would want to be able to reproduce and replicate your thinking about all of the tasks mentioned above on many different datasets and sometime even on the same dataset after some time.</p>
-<p>Coding is about formalizing your thinking about how you are treating the data and automating the formalization task to be done repetitively. It improves efficiency, enhances reproducability, and boosts creativity when it comes to finding new patterns in your data.</p>
+<p>There are a lot of fancy answers to it. But the key idea is that you want to be lazy about repetitive tasks (<em>MBAs</em> call it being “productive”).</p>
+<p>Many tasks - data cleaning, wrangling, visualization, and statistical analysis - require you to do them many times. Moreover, you would want to be able to reproduce and replicate your thinking about all of the tasks mentioned above on many different datasets and sometimes even on the same dataset after some time.</p>
+<p>Coding is about formalizing your thinking about how you treat the data and automating the formalization task to be done repetitively. It improves efficiency, enhances reproducibility, and boosts creativity when it comes to finding new patterns in your data.</p>
 <p>Guidelines for data and statistical analyses:<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <ol type="1">
-<li><strong>Accuracy</strong>: Write a code that reduces chances of making an error and lets you catch one if it occurs.</li>
-<li><strong>Efficiency</strong>: If you are doing it twice, see the pattern of your decision making and formalize it in your code. <em>Difference between Excel and coding</em></li>
+<li><strong>Accuracy</strong>: Write a code that reduces the chances of making an error and lets you catch one if it occurs.</li>
+<li><strong>Efficiency</strong>: If you are doing it twice, see the pattern of your decision-making and formalize it in your code. <em>Difference between Excel and coding</em></li>
 <li><strong>Replicate-and-Reproduce</strong>: Ability to repeat the computational process which reflects your thinking and decisions that you took along the way. Improves transparency and forces one to be deliberate and responsible about choices during analyses.<br>
 </li>
-<li><strong>Human Interpretability</strong>: Writing code is not just to analyse but allowing yourself and then others to be able to understand your analytic choices.<br>
+<li><strong>Human Interpretability</strong>: Writing code is not just about analyzing but allowing yourself and then others to be able to understand your analytic choices.<br>
 </li>
 <li><strong>Public Good</strong>: Research is a public good. And the code allows your research to be truly accessible. This means you write a code that anyone else who understands the language can read, reuse, and recreate without you being present. We essentially ensure that by writing a readable and publicly readable code.</li>
 </ol>
 </section>
 <section id="r-and-rstudio" class="level2">
 <h2 class="anchored" data-anchor-id="r-and-rstudio">R and RStudio</h2>
-<p>R is a free open source statistical programming language. We generally use R thorugh RStudio which is an integrated development environment (IDE). Essentially, it is the graphic user interface that allows us to use R in an efficient way. It has point-and-click functionality also (which we would not use a lot).</p>
+<p>R is a free open-source statistical programming language. We generally use R through RStudio which is an integrated development environment (IDE). Essentially, it is the graphic user interface that allows us to use R efficiently. It has point-and-click functionality also (which we would not use a lot).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -288,11 +288,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><strong>R Scripts</strong>: This is where put your code in a script. The script is saved with a <code>.R</code> extension.<br>
-<strong>Console</strong>: Output from your code appears here. You can also write the code directly here. But it does not get saved. Also, by default it shows only a limited number or previous steps (commands + outputs). Not a good practice to code here.<br>
+<strong>Console</strong>: Output from your code appears here. You can also write the code directly here. But it does not get saved. Also, by default, it shows only a limited number of previous steps (commands + outputs). Not a good practice to code here.<br>
 <strong>Environment</strong>: All the objects, datasets, lists, etc that you have created/loaded in the environment appear here. Alongside, you also see the custom functions that you might create.<br>
-<strong>File Browser/Help/Plot</strong>: Internal file navigators and help documentation for packages and functions appear here. Further, when you plot anything, that also get shown here.</p>
-<p>An R script is a text file which you can read on text editors too. We use RStudio to run the code in a way that computer understands.</p>
-<p><strong>Comments</strong>: R inteprets every line in the script as a separate command. And it does for each line unless preceded by a <code>#</code>. Comments signal to R that what follows the <code>#</code> is to be ignored.</p>
+<strong>File Browser/Help/Plot</strong>: Internal file navigators and help documentation for packages and functions appear here. Further, when you plot anything, that also gets shown here.</p>
+<p>An R script is a text file that you can read on text editors too. We use RStudio to run the code in a way that the computer understands.</p>
+<p><strong>Comments</strong>: R interprets every line in the script as a separate command. And it does for each line unless preceded by a <code>#</code>. Comments signal to R that what follows the <code>#</code> is to be ignored.</p>
 <p>We use comments to write explanatory notes about the code. A comment should explain the purpose of a command or code and not just be a description of what it does.</p>
 </section>
 <section id="basics" class="level2">
@@ -377,7 +377,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Run the following code in the same script</p>
+<p>Run the following code in the same script that we created</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(sum_2)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -554,7 +554,7 @@ y    4    5    6</code></pre>
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p><em>Creating lists</em></p>
+<p><strong>Creating lists</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>list_1 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"a"</span> <span class="ot">=</span> <span class="fl">2.5</span>, <span class="st">"b"</span> <span class="ot">=</span> <span class="cn">TRUE</span>, <span class="st">"c"</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -581,7 +581,7 @@ $c
  $ c: int [1:3] 1 2 3</code></pre>
 </div>
 </div>
-<p>We call also create a list with existing vectors.</p>
+<p>We can also create a list with existing vectors.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A new vector</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>name_vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Camilla"</span>,<span class="st">"Nila"</span>,<span class="st">"Duflo"</span>,<span class="st">"Akbar"</span>)</span>
@@ -672,6 +672,7 @@ $c
 <span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a><span class="co"># access elements by character index</span></span>
 <span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>list_3[<span class="fu">c</span>(<span class="st">"age"</span>, <span class="st">"speaks"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><strong>Modifying lists</strong></p>
 <p>Adding components in a list</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>list_4 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">name =</span> <span class="st">"Clair"</span>, <span class="at">age =</span> <span class="dv">19</span>, <span class="at">speaks =</span> <span class="fu">c</span>(<span class="st">"English"</span>, <span class="st">"French"</span>))</span>
