@@ -205,11 +205,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#why-code" id="toc-why-code" class="nav-link active" data-scroll-target="#why-code">Why Code?</a></li>
+  <li><a href="#math-session" id="toc-math-session" class="nav-link active" data-scroll-target="#math-session">Math Session</a></li>
+  <li><a href="#software-session" id="toc-software-session" class="nav-link" data-scroll-target="#software-session">Software Session</a>
+  <ul class="collapse">
+  <li><a href="#why-code" id="toc-why-code" class="nav-link" data-scroll-target="#why-code">Why Code?</a></li>
   <li><a href="#r-and-rstudio" id="toc-r-and-rstudio" class="nav-link" data-scroll-target="#r-and-rstudio">R and RStudio</a></li>
   <li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics">Basics</a></li>
   <li><a href="#objects-datatypes-and-data-structures" id="toc-objects-datatypes-and-data-structures" class="nav-link" data-scroll-target="#objects-datatypes-and-data-structures">Objects, Datatypes, and Data Structures</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists">Lists</a></li>
+  </ul></li>
   <li><a href="#additional-links" id="toc-additional-links" class="nav-link" data-scroll-target="#additional-links">Additional Links</a></li>
   </ul>
 </nav>
@@ -237,6 +241,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><img src="excel.webp" class="img-fluid" width="650"></p>
+<section id="math-session" class="level1">
+<h1>Math Session</h1>
+<p><strong>Linear Algebra</strong></p>
+<ol type="1">
+<li><p>Vector and Matrices</p></li>
+<li><p>System of equations</p></li>
+</ol>
+<p>Links</p>
+<ul>
+<li>Lecture slides <a href="https://georgetown.app.box.com/file/1626506975232">here</a></li>
+<li>Problem set <a href="https://georgetown.app.box.com/file/1626494834151">here</a></li>
+</ul>
+</section>
+<section id="software-session" class="level1">
+<h1>Software Session</h1>
 <section id="why-code" class="level2">
 <h2 class="anchored" data-anchor-id="why-code">Why Code?</h2>
 <p>A lot of diplomatic and fancy answers to it. But the key idea is that you want to be lazy about repetitive tasks (<em>MBAs</em> call it being “productive”).</p>
@@ -270,14 +289,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <strong>Console</strong>: Output from your code appears here. You can also write the code directly here. But it does not get saved. Also, by default it shows only a limited number or previous steps (commands + outputs). Not a good practice to code here.<br>
 <strong>Environment</strong>: All the objects, datasets, lists, etc that you have created/loaded in the environment appear here. Alongside, you also see the custom functions that you might create.<br>
 <strong>File Browser/Help/Plot</strong>: Internal file navigators and help documentation for packages and functions appear here. Further, when you plot anything, that also get shown here.</p>
-<p>An R script is a basic text file which you can read on text editors too. We use RStudio to run the code in a way that computer understands.</p>
+<p>An R script is a text file which you can read on text editors too. We use RStudio to run the code in a way that computer understands.</p>
 <p><strong>Comments</strong>: R inteprets every line in the script as a separate command. And it does for each line unless preceded by a <code>#</code>. Comments signal to R that what follows the <code>#</code> is to be ignored.</p>
 <p>We use comments to write explanatory notes about the code. A comment should explain the purpose of a command or code and not just be a description of what it does.</p>
 </section>
 <section id="basics" class="level2">
 <h2 class="anchored" data-anchor-id="basics">Basics</h2>
 <p>R uses <code>&lt;-</code> as the assignment operator. To the left of it is an object (sort of like a box that stores values which are to the right of the operator).</p>
-<p><strong>Syntax</strong>: object &lt;- value/data</p>
+<p><strong>Syntax</strong>: <code>object &lt;- value/data</code></p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><span style="color:#1696d2;">Exercise 1</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><span style="color:#1696d2;">Code 1</span></a></li></ul>
 <div class="tab-content">
@@ -383,12 +402,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Vectors</strong>: can hold objects of same datatype</p></li>
 <li><p><strong>Lists</strong>: can hold objects with different datatypes</p></li>
 </ol>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+Understanding Vectors
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>We can create a vector using the “c()” command.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>a_num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.7</span>,<span class="dv">9</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="sc">-</span><span class="dv">1</span>)            <span class="co"># numeric or double</span></span>
@@ -405,7 +428,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>g_int <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">+</span><span class="dv">0</span>i,<span class="dv">2</span><span class="sc">+</span><span class="dv">4</span>i) <span class="co"># complex numbers</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Basic Vectors are unidimensional. We can make a two dimensional vector, which is called <strong>matrix</strong>.</p>
+<p>Basic vectors are unidimensional. We can make a two dimensional vector, which is called <strong>matrix</strong>.</p>
 <section id="working-with-matrices" class="level3">
 <h3 class="anchored" data-anchor-id="working-with-matrices">Working with matrices</h3>
 <div class="cell">
@@ -456,7 +479,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>k</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Binding Vectors together to make a matrix</strong></p>
+<p><strong>Binding vectors together to make a matrix</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Binding</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
@@ -473,12 +496,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </div>
 </div>
-</div>
-<p>If we want to create something that stores different class of objects, we use another data structere called <code>list</code>.</p>
-<p>A list can contain more than 2 classes of objects</p>
+<p>If we want to create something that stores objects of different classes together, we use another data structure called <code>list</code>.</p>
+<p>A list can contain two or more classes of objects.</p>
 </section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
+<section id="lists" class="level2">
+<h2 class="anchored" data-anchor-id="lists">Lists</h2>
+</section>
 </section>
 <section id="additional-links" class="level1">
 <h1>Additional Links</h1>
