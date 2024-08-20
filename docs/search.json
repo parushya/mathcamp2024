@@ -110,6 +110,16 @@
     ]
   },
   {
+    "objectID": "day2.html#objects-datatypes-and-data-structures",
+    "href": "day2.html#objects-datatypes-and-data-structures",
+    "title": "Day 2 - R Basics",
+    "section": "Objects, Datatypes, and Data Structures",
+    "text": "Objects, Datatypes, and Data Structures\n\n\n\n\n\n\nExercise 2\n\n\n\nRun the following code in the same script\n\nclass(sum_2)\n\nclass(prod_3)\n\nclass(name)\n\n\n\nEverything in R is called an “object”\n“Objects” contain “data”.\nThe three variables we created - sum_2, prod_3, and name - were all basic objects.\nR has 5 basic or “atomic” classes/datatypes of objects.\n\nCharacter - (abc)\nNumeric - (real numbers) - (1,7.5,etc)\nInteger - (1,2,0,-896)\nLogical - (True/False)\nComplex - (1, 0+i)\n\nData structures are bigger containers that hold many objects.\nTwo basic or “atomic” data structures in R are:\n\nVectors: can hold objects of same datatype\nLists: can hold objects with different datatypes\n\n\n\n\n\n\n\nWe can create a vector using the “c()” command.\n\na_num &lt;- c(0,0.7,9,2,3,4,-1)            # numeric or double\n\nb_logical &lt;- c(TRUE,FALSE,TRUE,TRUE,TRUE) # logical\n\nc_logical &lt;- c(T,F,T,T,T) # also logical - Never use T and F as it leads to errors in analysis\n\nd_char &lt;- c(\"Sheila\", \"Nila\", \"Camilla\")  # character\n\ne_int &lt;- 1:20 # integer\n\nf_int &lt;- c(1,2,3,4,5)  # integer\n\ng_int &lt;- c(1+0i,2+4i) # complex numbers\n\nBasic Vectors are unidimensional. We can make a two dimensional vector, which is called matrix.\n\nWorking with matrices\n\n# Creating Blank Matrix\nm_1 &lt;- matrix(nrow=3,ncol=4)\nm_1      \ndim(m_1)\n\n\n?matrix # Help documentation\n\n# Creating Matrix with elements\n\nm_2 &lt;- matrix(1:10, nrow = 3, ncol = 4) # Why the warning?\nm_2\n\n# With correct number of elements\nm_3 &lt;- matrix(1:18, nrow=9, ncol=2))\nm3\n\nLogic of matrices\nMatrices are constructed column-wise. So, it fills the upper left corner, and then runs down along.\nIndexing in matrices\n\n# Rows & Columns ----    \n# Very simply the syntax is:  (2,3) = (Rows, Columns)\n# m[1,] - 1st row\n# m[2,] - 2nd row\n# m[,3] - 3rd column  \n# m[,5] - 5th column\n# m[,7] - 7th column\n\n\n# What if you already have a vector?\n# Example: You have received a list of students who have skipped school today.\n# You know which section they are in, and want to create a matrix.\nk &lt;- c(\"Hashem\", \"John\", \"Cecillia\", \"Minha\", \"Parushya\", \"Keeheon\")\nk\n\ndim(k) = c(3,2)\nk\n\ncolnames(k) = c(\"Section A\", \"Section B\")\n\nk\n\nrownames(k) = c(\"Student 1\", \"Student 2\", \"Student 3\")\n\nk\n\nBinding Vectors together to make a matrix\n\n# Binding\nx = 1:3\ny = 4:6\nz = c(\"Camilla\",\"Nila\",\"Duflo\",\"Akbar\")\n\nx\ny\nz\n\nrbind(x,y) # Stitches vector row wise, or appends it horizontally\ncbind(x,y) # Stitches vector column wise, or vertically\n\n\n\n\n\nIf we want to create something that stores different class of objects, we use another data structere called list.\nA list can contain more than 2 classes of objects",
+    "crumbs": [
+      "Day 2 - R Basics"
+    ]
+  },
+  {
     "objectID": "day2.html#footnotes",
     "href": "day2.html#footnotes",
     "title": "Day 2 - R Basics",
