@@ -245,7 +245,7 @@ window.Quarto = {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="quartomeme.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Suggested citation: Parushya. (2024). “Employing the Olympic Shooter Meme for Quarto Adoption”. <em>Math Camp 2024</em> ed.&nbsp;Hashem and Parushya</figcaption>
+<figcaption>Suggested citation: Parushya. (2024). “Employing the Olympic Shooter Meme for Quarto Adoption”. In Hashem and Parushya (Eds.),<em>Math Camp 2024</em></figcaption>
 </figure>
 </div>
 <section id="software-session" class="level1">
@@ -373,6 +373,44 @@ format:
 </section>
 <section id="code-chunks" class="level3">
 <h3 class="anchored" data-anchor-id="code-chunks">Code Chunks</h3>
+<table class="table">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 94%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>eval</code></td>
+<td>Evaluate the code chunk (if <code>false</code>, just echos the code into the output).</td>
+</tr>
+<tr class="even">
+<td><code>echo</code></td>
+<td>Include the source code in output</td>
+</tr>
+<tr class="odd">
+<td><code>output</code></td>
+<td>Include the results of executing the code in the output (<code>true</code>, <code>false</code>, or <code>asis</code> to indicate that the output is raw markdown and should not have any of Quarto’s standard enclosing markdown).</td>
+</tr>
+<tr class="even">
+<td><code>warning</code></td>
+<td>Include warnings in the output.</td>
+</tr>
+<tr class="odd">
+<td><code>error</code></td>
+<td>Include errors in the output (note that this implies that errors executing code will not halt processing of the document).</td>
+</tr>
+<tr class="even">
+<td><code>include</code></td>
+<td>Catch all for preventing any output (code or results) from being included (e.g.&nbsp;<code>include: false</code> suppresses all output from the code block).</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="basics-1" class="level2">
