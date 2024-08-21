@@ -182,11 +182,61 @@
   {
     "objectID": "day4.html",
     "href": "day4.html",
-    "title": "Day 4 - Quarto and LaTeX",
+    "title": "Day 4 - \\(\\LaTeX\\) and Quarto",
     "section": "",
-    "text": "Software Session\n\nWhy Quarto\nBasics\n\n\nYaml\nCode Chunks and Options\nWriting code\n\n\nLatex\n\nQuarto R for datascience https://r4ds.hadley.nz/quarto\nhttps://quarto.org/docs/get-started/hello/rstudio.html\nhttps://www.appsilon.com/post/r-quarto-tutorial#get-started\nhttps://openscapes.github.io/quarto-website-tutorial/quarto-workflows/rstudio.html\n(https://quarto.org/docs/gallery/).\n\nFollow these instructions to install library(tinytex).",
+    "text": "Software Session",
     "crumbs": [
-      "Day 4 - Quarto and LaTeX"
+      "Day 4 - $\\LaTeX$ and Quarto"
+    ]
+  },
+  {
+    "objectID": "day4.html#wth-is-latex",
+    "href": "day4.html#wth-is-latex",
+    "title": "Day 4 - \\(\\LaTeX\\) and Quarto",
+    "section": "WTH is \\(\\LaTeX\\)?",
+    "text": "WTH is \\(\\LaTeX\\)?\n\\(\\LaTeX\\) (pronounced “LAY-tek” or “LAH-Tek) is a typesetting tool for preparing high-quality professional documents. It is the preferred typesetting tool used in high-end scientific documentation task. Essentially, it allows you better control over how your document look like, has enhanced capabilities to write technical specifications (Maths, stats, proofs, etc.), and produces readily editable back-end documents.\nIt is not a word-processing tool. It is a simple tool without too many priors about how the document should look like.\nIn academic world there are definite advantages to learning and being comfortable with \\(\\LaTeX\\). That would require regular use and best time to start doing that would be today (or at least next week!).\nThere are many interfaces that allow you to work with \\(\\LaTeX\\). Overleaf is a widely used online platform and Texmaker is a popular offline application.\nHowever, RStudio has in-built capability to double as a \\(\\LaTeX\\) editor. Previously RMarkdown and now Quarto are those capabilities that you can harness to achieve professional and beautifully typeset documents.\nThink of writing an equation like:\n\\[\nViolence_{i,j} = \\beta_0 + \\beta_1EthnicFractionalization_i + \\gamma_j + \\epsilon_i\n\\] In Latex, using quarto, you have to write something like the following:\nViolence_{i,j} = \\beta_0 + \\beta_1EthnicFractionalization_i + \\gamma_j + \\epsilon_i",
+    "crumbs": [
+      "Day 4 - $\\LaTeX$ and Quarto"
+    ]
+  },
+  {
+    "objectID": "day4.html#quarto",
+    "href": "day4.html#quarto",
+    "title": "Day 4 - \\(\\LaTeX\\) and Quarto",
+    "section": "Quarto",
+    "text": "Quarto\nQuarto is a literate statistical programming tool. Literate statistical programming, as Donald Knuth (1984) defines, is a way to write programs that focuses on explaining to human readers what we want the computers to do, rather than just instructing the computers to do so.\nQuarto can include code from not just R, but also Python, Julia, Stata and many other languages/tools.\nQuarto allows you to truly include the good coding guidelines that we discussed on day 1. It provides you with capability to write code using R, write text that is part of any professional communication, and include mathematical symbols and equations in a well typeset format. Essentially, it allows you to work on a manuscript with data analysis at one place.\n\n\n\n\n\n\nExercise 1\n\nOpen a new quarto document by File &gt; New File &gt; Quarto Document.\nUse Render button on top on scripts panel to save and get a .pdf output.",
+    "crumbs": [
+      "Day 4 - $\\LaTeX$ and Quarto"
+    ]
+  },
+  {
+    "objectID": "day4.html#basics",
+    "href": "day4.html#basics",
+    "title": "Day 4 - \\(\\LaTeX\\) and Quarto",
+    "section": "Basics",
+    "text": "Basics\nA Quarto document is saved as a .qmd file. You can edit this file in two ways: Programmatically by being in source button and visually by choosing the Visual button, both button on top left corner of the .qmd window. More details about workign with Quarto can be found on the quarto website here.\nThere are three building blocks in a .qmd file:\n\nYAML\nShort for Yet-Another-Markup-Languge\nThis is the part we see sandwiched between two --- at the strat of .qmd file. Here we define different global settings for the particular document.\nCurrently, we see\n---\ntitle: \"Untitled\"\nformat: html\n---\nWe can add many more options here to modify the details to appear at the start of the document. Here’s an example from quarto reference site\n\n\n\n\n\n\n  ---\n  title: \"Toward a Unified Theory of High-Energy Metaphysics: Silly String Theory\"\n  date: 2008-02-29\n  author:\n    - name: Josiah Carberry\n      id: jc\n      orcid: 0000-0002-1825-0097\n      email: josiah@psychoceramics.org\n      affiliation: \n        - name: Brown University\n          city: Providence\n          state: RI\n          url: www.brown.edu\n  abstract: &gt; \n    The characteristic theme of the works of Stone is \n    the bridge between culture and society. ...\n  keywords:\n    - Metaphysics\n    - String Theory\n  license: \"CC BY\"\n  copyright: \n    holder: Josiah Carberry\n    year: 2008\n  citation: \n    container-title: Journal of Psychoceramics\n    volume: 1\n    issue: 1\n    doi: 10.5555/12345678\n  funding: \"The author received no specific funding for this work.\"\n  ---\n  \n\n\n\nOr, global settings for different formats of outputs like\n\n\n\n\n\n\n---\ntitle: \"My Document\"\nformat: \n  html:\n    fig-width: 8\n    fig-height: 6\n  pdf:\n    fig-width: 7\n    fig-height: 5\n---\n\n\n\n\n\nCode Chunks",
+    "crumbs": [
+      "Day 4 - $\\LaTeX$ and Quarto"
+    ]
+  },
+  {
+    "objectID": "day4.html#basics-1",
+    "href": "day4.html#basics-1",
+    "title": "Day 4 - \\(\\LaTeX\\) and Quarto",
+    "section": "Basics",
+    "text": "Basics\n\nYaml\n\n\nCode Chunks and Options\n\n\nWriting code",
+    "crumbs": [
+      "Day 4 - $\\LaTeX$ and Quarto"
+    ]
+  },
+  {
+    "objectID": "day4.html#latex",
+    "href": "day4.html#latex",
+    "title": "Day 4 - \\(\\LaTeX\\) and Quarto",
+    "section": "Latex",
+    "text": "Latex\nQuarto R for datascience https://r4ds.hadley.nz/quarto\nhttps://quarto.org/docs/get-started/hello/rstudio.html\nhttps://www.appsilon.com/post/r-quarto-tutorial#get-started\nhttps://openscapes.github.io/quarto-website-tutorial/quarto-workflows/rstudio.html\n(https://quarto.org/docs/gallery/).\n\nFollow these instructions to install library(tinytex).\n\n\\(\\alpha = \\beta_0 + \\beta_1\\).\nhttps://quarto.org/docs/guide/\nhttps://bookdown.org/Yuleng/introrlatex/introLaTeX.html",
+    "crumbs": [
+      "Day 4 - $\\LaTeX$ and Quarto"
     ]
   },
   {

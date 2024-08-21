@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math Camp 2024 - Day 4 - Quarto and LaTeX</title>
+<title>Math Camp 2024 - Day 4 - \(\LaTeX\) and Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="www/styles.css">
 </head>
@@ -82,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./day4.html">Day 4 - Quarto and LaTeX</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./day4.html">Day 4 - <span class="math inline">\(\LaTeX\)</span> and Quarto</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -140,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./day4.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Day 4 - Quarto and LaTeX</span></a>
+ <span class="menu-text">Day 4 - <span class="math inline">\(\LaTeX\)</span> and Quarto</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -171,7 +200,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#software-session" id="toc-software-session" class="nav-link active" data-scroll-target="#software-session">Software Session</a></li>
+  <li><a href="#software-session" id="toc-software-session" class="nav-link active" data-scroll-target="#software-session">Software Session</a>
+  <ul class="collapse">
+  <li><a href="#wth-is-latex" id="toc-wth-is-latex" class="nav-link" data-scroll-target="#wth-is-latex">WTH is <span class="math inline">\(\LaTeX\)</span>?</a></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
+  <li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics">Basics</a>
+  <ul class="collapse">
+  <li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml"><strong>YAML</strong></a></li>
+  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">Code Chunks</a></li>
+  </ul></li>
+  <li><a href="#basics-1" id="toc-basics-1" class="nav-link" data-scroll-target="#basics-1">Basics</a>
+  <ul class="collapse">
+  <li><a href="#yaml-1" id="toc-yaml-1" class="nav-link" data-scroll-target="#yaml-1">Yaml</a></li>
+  <li><a href="#code-chunks-and-options" id="toc-code-chunks-and-options" class="nav-link" data-scroll-target="#code-chunks-and-options">Code Chunks and Options</a></li>
+  <li><a href="#writing-code" id="toc-writing-code" class="nav-link" data-scroll-target="#writing-code">Writing code</a></li>
+  </ul></li>
+  <li><a href="#latex" id="toc-latex" class="nav-link" data-scroll-target="#latex">Latex</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -180,7 +225,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Day 4 - Quarto and LaTeX</h1>
+<h1 class="title">Day 4 - <span class="math inline">\(\LaTeX\)</span> and Quarto</h1>
 </div>
 
 
@@ -197,20 +242,153 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="quartomeme.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Suggested citation: Parushya. (2024). “Employing the Olympic Shooter Meme for Quarto Adoption”. <em>Math Camp 2024</em> ed.&nbsp;Hashem and Parushya</figcaption>
+</figure>
+</div>
 <section id="software-session" class="level1">
 <h1>Software Session</h1>
 <ol type="1">
-<li><p>Why Quarto</p></li>
+<li><p>WTH is <span class="math inline">\(\LaTeX\)</span>?</p></li>
+<li><p>Why Quarto?</p></li>
 <li><p>Basics</p></li>
 </ol>
 <ul>
 <li><p>Yaml</p></li>
-<li><p>Code Chunks and Options</p></li>
-<li><p>Writing code</p></li>
+<li><p>Markdown text</p></li>
+<li><p>Code Chunks</p></li>
 </ul>
 <ol start="3" type="1">
 <li>Latex</li>
 </ol>
+<section id="wth-is-latex" class="level2">
+<h2 class="anchored" data-anchor-id="wth-is-latex">WTH is <span class="math inline">\(\LaTeX\)</span>?</h2>
+<p><a href="https://www.latex-project.org/about/"><span class="math inline">\(\LaTeX\)</span></a> (pronounced <em>“LAY-tek”</em> or <em>“LAH-Tek</em>) is a typesetting tool for preparing high-quality professional documents. It is the preferred typesetting tool used in high-end scientific documentation task. Essentially, it allows you better control over how your document look like, has enhanced capabilities to write technical specifications (Maths, stats, proofs, etc.), and produces readily editable back-end documents.</p>
+<p>It is not a word-processing tool. It is a simple tool without too many priors about how the document should look like.</p>
+<p>In academic world there are definite advantages to learning and being comfortable with <span class="math inline">\(\LaTeX\)</span>. That would require regular use and best time to start doing that would be today (or at least next week!).</p>
+<p>There are many interfaces that allow you to work with <span class="math inline">\(\LaTeX\)</span>. <a href="https://www.overleaf.com/">Overleaf</a> is a widely used online platform and <a href="https://www.xm1math.net/texmaker/index.html">Texmaker</a> is a popular offline application.</p>
+<p>However, RStudio has in-built capability to double as a <span class="math inline">\(\LaTeX\)</span> editor. Previously <code>RMarkdown</code> and now <code>Quarto</code> are those capabilities that you can harness to achieve professional and beautifully typeset documents.</p>
+<p>Think of writing an equation like:<br>
+<span class="math display">\[
+Violence_{i,j} = \beta_0 + \beta_1EthnicFractionalization_i + \gamma_j + \epsilon_i
+\]</span> In Latex, using quarto, you have to write something like the following:</p>
+<p>Violence_{i,j} = \beta_0 + \beta_1EthnicFractionalization_i + \gamma_j + \epsilon_i</p>
+</section>
+<section id="quarto" class="level2">
+<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
+<p>Quarto is a literate statistical programming tool. Literate statistical programming, as <a href="https://academic.oup.com/comjnl/article/27/2/97/343244?login=false">Donald Knuth (1984)</a> defines, is a way to write programs that focuses on explaining to human readers what we want the computers to do, rather than just instructing the computers to do so.</p>
+<p>Quarto can include code from not just R, but also Python, Julia, Stata and many other languages/tools.</p>
+<p>Quarto allows you to truly include the good coding guidelines that we discussed on day 1. It provides you with capability to write code using R, write text that is part of any professional communication, and include mathematical symbols and equations in a well typeset format. Essentially, it allows you to work on a manuscript with data analysis at one place.</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Exercise 1</p>
+<ol type="1">
+<li>Open a new quarto document by <code>File &gt; New File &gt; Quarto Document</code>.</li>
+<li>Use Render button on top on scripts panel to save and get a <code>.pdf</code> output.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="basics" class="level2">
+<h2 class="anchored" data-anchor-id="basics">Basics</h2>
+<p>A Quarto document is saved as a <code>.qmd</code> file. You can edit this file in two ways: Programmatically by being in <code>source</code> button and visually by choosing the <code>Visual</code> button, both button on top left corner of the <code>.qmd</code> window. More details about workign with Quarto can be found on the <a href="https://quarto.org/docs/get-started/hello/rstudio.html">quarto website here</a>.</p>
+<p>There are three building blocks in a <code>.qmd</code> file:</p>
+<section id="yaml" class="level3">
+<h3 class="anchored" data-anchor-id="yaml"><strong>YAML</strong></h3>
+<p>Short for <em>Yet-Another-Markup-Languge</em></p>
+<p>This is the part we see sandwiched between two <code>---</code> at the strat of <code>.qmd</code> file. Here we define different global settings for the particular document.</p>
+<p>Currently, we see</p>
+<pre><code>---
+title: "Untitled"
+format: html
+---</code></pre>
+<p>We can add many more options here to modify the details to appear at the start of the document. Here’s an example from <a href="https://quarto.org/docs/authoring/front-matter.html">quarto reference site</a></p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<pre><code>  ---
+  title: "Toward a Unified Theory of High-Energy Metaphysics: Silly String Theory"
+  date: 2008-02-29
+  author:
+    - name: Josiah Carberry
+      id: jc
+      orcid: 0000-0002-1825-0097
+      email: josiah@psychoceramics.org
+      affiliation: 
+        - name: Brown University
+          city: Providence
+          state: RI
+          url: www.brown.edu
+  abstract: &gt; 
+    The characteristic theme of the works of Stone is 
+    the bridge between culture and society. ...
+  keywords:
+    - Metaphysics
+    - String Theory
+  license: "CC BY"
+  copyright: 
+    holder: Josiah Carberry
+    year: 2008
+  citation: 
+    container-title: Journal of Psychoceramics
+    volume: 1
+    issue: 1
+    doi: 10.5555/12345678
+  funding: "The author received no specific funding for this work."
+  ---
+  </code></pre>
+</div>
+</div>
+</div>
+<p>Or, global settings for different formats of outputs like</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<pre><code>---
+title: "My Document"
+format: 
+  html:
+    fig-width: 8
+    fig-height: 6
+  pdf:
+    fig-width: 7
+    fig-height: 5
+---</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="code-chunks" class="level3">
+<h3 class="anchored" data-anchor-id="code-chunks">Code Chunks</h3>
+</section>
+</section>
+<section id="basics-1" class="level2">
+<h2 class="anchored" data-anchor-id="basics-1">Basics</h2>
+<section id="yaml-1" class="level3">
+<h3 class="anchored" data-anchor-id="yaml-1">Yaml</h3>
+</section>
+<section id="code-chunks-and-options" class="level3">
+<h3 class="anchored" data-anchor-id="code-chunks-and-options">Code Chunks and Options</h3>
+</section>
+<section id="writing-code" class="level3">
+<h3 class="anchored" data-anchor-id="writing-code">Writing code</h3>
+</section>
+</section>
+<section id="latex" class="level2">
+<h2 class="anchored" data-anchor-id="latex">Latex</h2>
 <p>Quarto R for datascience https://r4ds.hadley.nz/quarto</p>
 <p>https://quarto.org/docs/get-started/hello/rstudio.html</p>
 <p>https://www.appsilon.com/post/r-quarto-tutorial#get-started</p>
@@ -219,8 +397,12 @@ ul.task-list li input[type="checkbox"] {
 <ol start="2" type="1">
 <li>Follow <a href="https://yihui.org/tinytex/">these instructions</a> to install <code>library(tinytex)</code>.</li>
 </ol>
+<p><span class="math inline">\(\alpha = \beta_0 + \beta_1\)</span>.</p>
+<p>https://quarto.org/docs/guide/</p>
+<p>https://bookdown.org/Yuleng/introrlatex/introLaTeX.html</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
