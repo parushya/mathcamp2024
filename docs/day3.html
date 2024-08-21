@@ -354,7 +354,7 @@ Levels: Placebo Medium High</code></pre>
 </section>
 <section id="dataframes" class="level2">
 <h2 class="anchored" data-anchor-id="dataframes">Dataframes</h2>
-<p>In R dataframe are data strctures which store data in a tabular format.</p>
+<p>In R, dataframes are data structure which store data in a tabular format.</p>
 <div class="callout callout-style-simple callout-none no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -463,9 +463,9 @@ Exercise 1
 <section id="importing-and-exporting-datasets" class="level2">
 <h2 class="anchored" data-anchor-id="importing-and-exporting-datasets">Importing and Exporting Datasets</h2>
 <p><img src="datasets.webp" height="650"></p>
-<p>R has a range of functions for using different types of data. But before loading datasets let’s understand the concept of working directories</p>
-<p>A <strong>working directory</strong> is sort of the “office” that you operate from. Working directories are the same. They tell R where to operate from.</p>
-<p>Workign directories are specified using file path i.e.&nbsp;the address in your computer where your script will be stored, or where your dataset is kept.</p>
+<p>R has a range of functions for using different types of data. But before loading datasets let’s understand the concept of working directories.</p>
+<p>A <strong>working directory</strong> is sort of the “office” that you operate from. They tell R where to operate from.</p>
+<p>Working directories are specified using a file path i.e.&nbsp;the address in your computer where your script will be stored, or where your dataset is kept.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Commands:</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>() <span class="co"># Gets the present directory or pathway where you are operating from</span></span>
@@ -479,8 +479,8 @@ Exercise 1
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read.csv</span>(<span class="st">"FileName"</span>) <span class="co"># reads CSV files / press tab inside the quotes</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">"Pathname/filename.csv"</span>)  </span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># The part before :: int he following code refers to the package from where the </span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co"># following function comes from. You will need to load those packages for use</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># The part before :: in the following code refers to the package from where the </span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co">#  function comes from. You will need to load those packages first.</span></span>
 <span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>readxl<span class="sc">::</span><span class="fu">read_excel</span>() <span class="co"># read excel files</span></span>
 <span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>readxl<span class="sc">::</span><span class="fu">read_xlsx</span>() <span class="co"># reads excel workbooks</span></span>
