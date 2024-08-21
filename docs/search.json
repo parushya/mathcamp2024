@@ -184,9 +184,19 @@
     "href": "day4.html",
     "title": "Day 4 - Quarto and LaTeX",
     "section": "",
-    "text": "Software Session\n\nWhy Quarto\nBasics\n\n\nYaml\nCode Chunks and Options\nWriting code\n\n\nLatex\n\nQuarto R for datascience https://r4ds.hadley.nz/quarto",
+    "text": "Software Session\n\nWhy Quarto\nBasics\n\n\nYaml\nCode Chunks and Options\nWriting code\n\n\nLatex\n\nQuarto R for datascience https://r4ds.hadley.nz/quarto\nhttps://quarto.org/docs/get-started/hello/rstudio.html\nhttps://www.appsilon.com/post/r-quarto-tutorial#get-started\nhttps://openscapes.github.io/quarto-website-tutorial/quarto-workflows/rstudio.html\n(https://quarto.org/docs/gallery/).\n\nFollow these instructions to install library(tinytex).",
     "crumbs": [
       "Day 4 - Quarto and LaTeX"
+    ]
+  },
+  {
+    "objectID": "day5.html",
+    "href": "day5.html",
+    "title": "Day 5 - File Management and Workflow",
+    "section": "",
+    "text": "https://happygitwithr.com/ Github link\nQuarto essay template\nQuarto paper template\nQuarto CV template\nQuarto extensions for CV and articles",
+    "crumbs": [
+      "Day 5 - File Management and Workflow"
     ]
   },
   {
