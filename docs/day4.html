@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -207,16 +241,11 @@ window.Quarto = {
   <li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics">Basics</a>
   <ul class="collapse">
   <li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml"><strong>YAML</strong></a></li>
-  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">Code Chunks</a></li>
+  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks"><strong>Code Chunks</strong></a></li>
+  <li><a href="#markdown-text" id="toc-markdown-text" class="nav-link" data-scroll-target="#markdown-text"><strong>Markdown Text</strong></a></li>
   </ul></li>
-  <li><a href="#basics-1" id="toc-basics-1" class="nav-link" data-scroll-target="#basics-1">Basics</a>
-  <ul class="collapse">
-  <li><a href="#yaml-1" id="toc-yaml-1" class="nav-link" data-scroll-target="#yaml-1">Yaml</a></li>
-  <li><a href="#code-chunks-and-options" id="toc-code-chunks-and-options" class="nav-link" data-scroll-target="#code-chunks-and-options">Code Chunks and Options</a></li>
-  <li><a href="#writing-code" id="toc-writing-code" class="nav-link" data-scroll-target="#writing-code">Writing code</a></li>
   </ul></li>
-  <li><a href="#latex" id="toc-latex" class="nav-link" data-scroll-target="#latex">Latex</a></li>
-  </ul></li>
+  <li><a href="#additonal-links" id="toc-additonal-links" class="nav-link" data-scroll-target="#additonal-links">Additonal Links</a></li>
   </ul>
 </nav>
     </div>
@@ -274,13 +303,18 @@ window.Quarto = {
 <span class="math display">\[
 Violence_{i,j} = \beta_0 + \beta_1EthnicFractionalization_i + \gamma_j + \epsilon_i
 \]</span> In Latex, using quarto, you have to write something like the following:</p>
-<p>Violence_{i,j} = \beta_0 + \beta_1EthnicFractionalization_i + \gamma_j + \epsilon_i</p>
+<p><code>$Violence_{i,j} = \\beta_0 + \\beta_1EthnicFractionalization_i + \\gamma_j + \\epsilon_i$</code></p>
+<p>For a single line of text we encapsulate code by <code>$</code> sign.</p>
+<p>For multi-line code we use <code>$$</code>.</p>
+<p>Read more about <span class="math inline">\(\LaTeX\)</span> <a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">here</a></p>
+<p>The <a href="https://georgetown.app.box.com/folder/281469681155">box folder has some detailed resources</a> for helping with typesetting in <span class="math inline">\(\LaTeX\)</span>.</p>
 </section>
 <section id="quarto" class="level2">
 <h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
 <p>Quarto is a literate statistical programming tool. Literate statistical programming, as <a href="https://academic.oup.com/comjnl/article/27/2/97/343244?login=false">Donald Knuth (1984)</a> defines, is a way to write programs that focuses on explaining to human readers what we want the computers to do, rather than just instructing the computers to do so.</p>
 <p>Quarto can include code from not just R, but also Python, Julia, Stata and many other languages/tools.</p>
 <p>Quarto allows you to truly include the good coding guidelines that we discussed on day 1. It provides you with capability to write code using R, write text that is part of any professional communication, and include mathematical symbols and equations in a well typeset format. Essentially, it allows you to work on a manuscript with data analysis at one place.</p>
+<p>Here is <a href="https://quarto.org/docs/gallery/">some cool stuff</a> that you can do with quarto.</p>
 <div class="callout callout-style-simple callout-none no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -372,7 +406,38 @@ format:
 </div>
 </section>
 <section id="code-chunks" class="level3">
-<h3 class="anchored" data-anchor-id="code-chunks">Code Chunks</h3>
+<h3 class="anchored" data-anchor-id="code-chunks"><strong>Code Chunks</strong></h3>
+<p>One of the fascinating features about quarto is that you can write code to anlayse data and regular text in the same document.</p>
+<p>You can start a new <code>R</code> code chunk by pressing <code>cmd + option + I</code> or <code>ctrl + alt + I</code>.</p>
+<p>You can also do this with the <code>Insert</code> button icon in the editor toolbar or by manually typing the chunk delimiters <code>```{r}</code> and <code>```</code>.</p>
+<p>Try to use the keyboard shortcut more often as it will save you a ton of time later.</p>
+<p>R code chunks are surrounded by <code>```{r}</code>.</p>
+<p>You can run each code chunk by clicking the Run icon (it looks like a play button at the top of the chunk), or by pressing Cmd/Ctrl + Shift + Enter.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true # Do evaluate this chunk</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true # Do show this chunk in the final rendered document</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| output: true # Do show the output / results of this chunk in the rendered document</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Dont run this code"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>RStudio executes the code and displays the results inline with the code.</p>
+<p>If you don’t like seeing your plots and output in your document and would rather make use of RStudio’s Console and Plot panes, you can click on the gear icon next to “Render” and switch to “Chunk Output in Console”.</p>
+<p>A chunk should be relatively self-contained, and focused around a single task.</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Exercise</p>
+<ol type="1">
+<li><p>Add a code chunk at the bottom of the <code>.qmd</code> file you created.</p></li>
+<li><p>Add some simple mathematical operations from the exercises on Day 2 in the code chunk.</p></li>
+<li><p>Run the code chunk separately, and then the whole file by pressing <code>Render</code> button from the top.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<p>Code chunk options are included in a special comment at the top of the block (lines at the top prefaced with #| are considered options). More on code chunk options <a href="https://quarto.org/docs/computations/execution-options.html">here</a></p>
+<p>Options available for customizing output include:</p>
 <table class="table">
 <colgroup>
 <col style="width: 5%">
@@ -411,36 +476,137 @@ format:
 </tr>
 </tbody>
 </table>
+<p>You can also add these options as global options in the <strong>YAML</strong> by writing them under execute option like:</p>
+<pre><code>---
+execute: 
+  echo: true
+  inlcude: false
+---</code></pre>
+<p>The following table summarizes which types of output each option suppresses:<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<table class="table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 13%">
+<col style="width: 14%">
+<col style="width: 10%">
+<col style="width: 9%">
+<col style="width: 13%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th style="text-align: center;">Run code</th>
+<th style="text-align: center;">Show code</th>
+<th style="text-align: center;">Output</th>
+<th style="text-align: center;">Plots</th>
+<th style="text-align: center;">Messages</th>
+<th style="text-align: center;">Warnings</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>eval: false</code></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+</tr>
+<tr class="even">
+<td><code>include: false</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+</tr>
+<tr class="odd">
+<td><code>echo: false</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td><code>results: hide</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td><code>fig-show: hide</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td><code>message: false</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td><code>warning: false</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
+</tr>
+</tbody>
+</table>
+<section id="inline-code" class="level4">
+<h4 class="anchored" data-anchor-id="inline-code">Inline code</h4>
+<p>We can also embed R code into a Quarto document: directly into the text, with: <code>r inline()</code>.</p>
+<p>For example: <code>r inline(2+2)</code>.</p>
 </section>
 </section>
-<section id="basics-1" class="level2">
-<h2 class="anchored" data-anchor-id="basics-1">Basics</h2>
-<section id="yaml-1" class="level3">
-<h3 class="anchored" data-anchor-id="yaml-1">Yaml</h3>
+<section id="markdown-text" class="level3">
+<h3 class="anchored" data-anchor-id="markdown-text"><strong>Markdown Text</strong></h3>
+<p>Markdown text is like any other text just with some special considerations.</p>
+<p>You can see the <code>help</code> section from R to see soem of the basic formatting tips.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Markdownhelp.png" class="img-fluid figure-img"></p>
+<figcaption>R Markdown Help</figcaption>
+</figure>
+</div>
 </section>
-<section id="code-chunks-and-options" class="level3">
-<h3 class="anchored" data-anchor-id="code-chunks-and-options">Code Chunks and Options</h3>
-</section>
-<section id="writing-code" class="level3">
-<h3 class="anchored" data-anchor-id="writing-code">Writing code</h3>
 </section>
 </section>
-<section id="latex" class="level2">
-<h2 class="anchored" data-anchor-id="latex">Latex</h2>
-<p>Quarto R for datascience https://r4ds.hadley.nz/quarto</p>
-<p>https://quarto.org/docs/get-started/hello/rstudio.html</p>
-<p>https://www.appsilon.com/post/r-quarto-tutorial#get-started</p>
-<p>https://openscapes.github.io/quarto-website-tutorial/quarto-workflows/rstudio.html</p>
+<section id="additonal-links" class="level1">
+<h1>Additonal Links</h1>
+<p><a href="https://r4ds.hadley.nz/quarto">Quarto R for datascience</a></p>
+<p>(https://quarto.org/docs/get-started/hello/rstudio.html)</p>
+<p>(https://www.appsilon.com/post/r-quarto-tutorial#get-started)</p>
+<p>(https://openscapes.github.io/quarto-website-tutorial/quarto-workflows/rstudio.html)</p>
 <p>(https://quarto.org/docs/gallery/).</p>
-<ol start="2" type="1">
-<li>Follow <a href="https://yihui.org/tinytex/">these instructions</a> to install <code>library(tinytex)</code>.</li>
-</ol>
-<p><span class="math inline">\(\alpha = \beta_0 + \beta_1\)</span>.</p>
+<p>Follow <a href="https://yihui.org/tinytex/">these instructions</a> to install <code>library(tinytex)</code>.</p>
 <p>https://quarto.org/docs/guide/</p>
 <p>https://bookdown.org/Yuleng/introrlatex/introLaTeX.html</p>
 
 
 </section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>This section is copied from <a href="https://github.com/hadley/r4ds/blob/main/quarto.qmd">R4DS book</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
