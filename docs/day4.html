@@ -412,14 +412,14 @@ format:
 <p>You can start a new <code>R</code> code chunk by pressing <code>cmd + option + I</code> or <code>ctrl + alt + I</code>.</p>
 <p>You can also do this with the <code>Insert</code> button icon in the editor toolbar or by manually typing the chunk delimiters <code>```{r}</code> and <code>```</code>.</p>
 <p>Try to use the keyboard shortcut more often as it will save you a ton of time later.</p>
-<p>R code chunks are surrounded by <code>```{r}</code>.</p>
+<p>R code chunks are surrounded by <code>```{r}</code> and <code>```</code>.</p>
 <p>You can run each code chunk by clicking the Run icon (it looks like a play button at the top of the chunk), or by pressing Cmd/Ctrl + Shift + Enter.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true # Do evaluate this chunk</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true # Do show this chunk in the final rendered document</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| output: true # Do show the output / results of this chunk in the rendered document</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Dont run this code"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>RStudio executes the code and displays the results inline with the code.</p>
+<p>RStudio executes the code and displays the results below the code.</p>
 <p>If you don’t like seeing your plots and output in your document and would rather make use of RStudio’s Console and Plot panes, you can click on the gear icon next to “Render” and switch to “Chunk Output in Console”.</p>
 <p>A chunk should be relatively self-contained, and focused around a single task.</p>
 <div class="callout callout-style-simple callout-none no-icon">
@@ -437,7 +437,7 @@ format:
 </div>
 </div>
 </div>
-<p>Code chunk options are included in a special comment at the top of the block (lines at the top prefaced with #| are considered options). More on code chunk options <a href="https://quarto.org/docs/computations/execution-options.html">here</a></p>
+<p>Code chunk options are included in a special comment at the top of the block (lines at the top prefaced with <code>#|</code> are considered options). More on code chunk options <a href="https://quarto.org/docs/computations/execution-options.html">here</a></p>
 <p>Options available for customizing output include:</p>
 <table class="table">
 <colgroup>
@@ -573,8 +573,8 @@ execute:
 </table>
 <section id="inline-code" class="level4">
 <h4 class="anchored" data-anchor-id="inline-code">Inline code</h4>
-<p>We can also embed R code into a Quarto document: directly into the text, with: <code>r inline()</code>.</p>
-<p>For example: <code>r inline(2+2)</code>.</p>
+<p>We can also embed R code into a Quarto document: directly into the text, with: <code>```{r} &lt;code&gt; ```</code>.</p>
+<p>For example: <code>```{r} (2+2)```</code>.</p>
 </section>
 </section>
 <section id="markdown-text" class="level3">
@@ -586,6 +586,158 @@ execute:
 <p><img src="Markdownhelp.png" class="img-fluid figure-img"></p>
 <figcaption>R Markdown Help</figcaption>
 </figure>
+</div>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>These are some of the regularly used formatting options in RMarkdown/Quarto Titles and subtitles ————————————————————</p>
+<pre><code># Title 1
+
+## Title 2
+
+### Title 3
+
+
+Text formatting 
+------------------------------------------------------------
+
+*italic*  
+
+**bold**   
+
+`code`
+
+Lists
+------------------------------------------------------------
+
+* Bulleted list item 1
+* Item 2
+  * Item 2a
+  * Item 2b
+
+1. Item 1
+2. Item 2
+
+Links and images
+------------------------------------------------------------</code></pre>
+</div>
+</div>
+</div>
+<p>Let’s try all that we learnt</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Exercise</p>
+<ol type="1">
+<li><p>Delete the existing code in the <code>.qmd</code> file that we created today.</p></li>
+<li><p>Add some simple mathematical operations from the exercises on Day 2 in the code chunk (like the previous exercise). Now, in the chunk set the options differently. You could play with different options that we learnt above and their values. Use <code>&lt;TAB&gt;</code> button to see different values that you can provide to chunk options.</p></li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: true</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| output: asis</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="in">1 + 1</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>[1] 2</p>
+<ol start="3" type="1">
+<li>Add two separate R chunks. First, load the VDEM data as we did yesterday in one. Second, to <code>filter</code> data to year 2021 and <code>select</code> the variables - <code>year</code>, <code>country_name</code>, <code>v2x_libdem</code>, <code>e_gdppc</code>, <code>e_pop</code>.</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false </span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| message: false</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="in"># Loading packages</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="in">library(tidyverse) # For tidyverse</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="in">library(janitor) # For Janitor</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="in"># Loading Dataset</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="in">vdem_df &lt;- readRDS("Datasets-mathcamp/V-Dem-CY-Full+Others-v12.rds") %&gt;% </span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="in">clean_names() </span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="in"># ` %&gt;% ` is the piping operator from tidyverse universe</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="in"># `clean_names` cleans the names of columns and standardizes them | from Janitor package</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false  # Toggle with options as well the paramters like true/false etc</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| message: false</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="in">vdem_2021 &lt;- vdem_df %&gt;% </span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="in">  filter(year == 2021) %&gt;%  # To filter values according to one variable</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="in">  select(year, country_name, v2x_libdem, e_gdppc, e_pop) # To select particular variables</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>Run the following code to plot <code>v2x_libdem</code> on x-axis and <code>e_gdppc</code> on y-axis.</li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false  # Toggle with options as well the paramters like true/false etc</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| message: false</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot( data = vdem_df, aes( x = v2x_libdem, y = e_gdppc)) +</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="in">geom_point()</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="5" type="1">
+<li>Add a least-squares/ linear regression line to the plot.</li>
+</ol>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false  # Toggle with options as well the paramters like true/false etc</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| message: false</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot( data = vdem_df, aes( x = v2x_libdem, y = e_gdppc)) +</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="in">geom_point( alpha = 0.5) +</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="in">geom_smooth(method = "lm")</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="6" type="1">
+<li><p>Find out what the variables <code>v2x_libdem</code> and <code>e_gdppc</code> mean from the VDem Codebook <a href="https://v-dem.net/documents/38/V-Dem_Codebook_v14.pdf">here</a>. Write the details of the variable in the markdown text area of quarto explaining these variables.</p></li>
+<li><p>We added a least squares best fit line in the second plot. Write a basic equation in LaTex that looks like this:</p></li>
+</ol>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Model Equation</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Model Latex Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><span class="math inline">\(LiberalDemocracy_i = \alpha + \beta_1GDPpc_i + epislon_i\)</span></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><code>$LiberalDemocracy_i = \alpha + \beta_1GDPpc_i + epislon_i$</code></p>
+</div>
+</div>
+</div>
+<p><br></p>
+<ol start="8" type="1">
+<li>Render the whole document into a <code>.pdf</code> with your name in the YAML and today’s date. You may use the following YAML with modifications.</li>
+</ol>
+<pre class="---"><code>title: My First Latex Paper
+author: Your Name
+subtitle: Department of Government, Georgetown University
+date: today
+mainfont: Georgia
+fontsize: 12pt
+format:
+  pdf:
+    pdf-engine: xelatex
+  docx: default
+engine: knitr
+always_allow_html: true
+geometry: margin=1.25in
+linestretch: 1
+linkcolor: blue
+link-citations: true
+editor_options: 
+  chunk_output_type: console
+---
+</code></pre>
+</div>
+</div>
 </div>
 </section>
 </section>
