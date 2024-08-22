@@ -294,7 +294,7 @@ window.Quarto = {
 <li><p>Code Chunks</p></li>
 </ul>
 <ol start="3" type="1">
-<li>Latex</li>
+<li>Practice</li>
 </ol>
 <section id="wth-is-latex" class="level2">
 <h2 class="anchored" data-anchor-id="wth-is-latex">WTH is <span class="math inline">\(\LaTeX\)</span>?</h2>
@@ -729,24 +729,30 @@ Exercise
 <ol start="8" type="1">
 <li>Render the whole document into a <code>.pdf</code> with your name in the YAML and today’s date. You may use the following YAML with modifications.</li>
 </ol>
-<pre class="---"><code>title: My First Latex Paper
-author: Your Name
-subtitle: Department of Government, Georgetown University
+<pre class="---"><code>title: My First Latex Document
+subtitle: Prepared for Math Camp 2024
+author: &lt;Your Name&gt;
 date: today
-mainfont: Georgia
-fontsize: 12pt
 format:
   pdf:
-    pdf-engine: xelatex
+    highlight-style: kate
+    citation_package: natbib
   docx: default
-engine: knitr
 always_allow_html: true
-geometry: margin=1.25in
-linestretch: 1
+geometry: margin=1.2in
+fontsize: 12pt
+linestretch: 1.5
 linkcolor: blue
+toc: true
 link-citations: true
 editor_options: 
   chunk_output_type: console
+execute: 
+  fig-height: 6
+  fig-width: 8.5
+  fig-pos: "!t"
+keep_tex: true
+whitespace: small
 ---
 </code></pre>
 </div>

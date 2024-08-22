@@ -244,7 +244,47 @@
     "href": "day5.html",
     "title": "Day 5 - File Management and Workflow",
     "section": "",
-    "text": "https://happygitwithr.com/ Github link\nQuarto essay template\nQuarto paper template\nQuarto CV template\nQuarto extensions for CV and articles",
+    "text": "File Management",
+    "crumbs": [
+      "Day 5 - File Management and Workflow"
+    ]
+  },
+  {
+    "objectID": "day5.html#workflow",
+    "href": "day5.html#workflow",
+    "title": "Day 5 - File Management and Workflow",
+    "section": "Workflow",
+    "text": "Workflow",
+    "crumbs": [
+      "Day 5 - File Management and Workflow"
+    ]
+  },
+  {
+    "objectID": "day5.html#r-projects",
+    "href": "day5.html#r-projects",
+    "title": "Day 5 - File Management and Workflow",
+    "section": "R Projects",
+    "text": "R Projects",
+    "crumbs": [
+      "Day 5 - File Management and Workflow"
+    ]
+  },
+  {
+    "objectID": "day5.html#basic-setup-template",
+    "href": "day5.html#basic-setup-template",
+    "title": "Day 5 - File Management and Workflow",
+    "section": "Basic Setup Template",
+    "text": "Basic Setup Template",
+    "crumbs": [
+      "Day 5 - File Management and Workflow"
+    ]
+  },
+  {
+    "objectID": "day5.html#using-zotero-in-quarto",
+    "href": "day5.html#using-zotero-in-quarto",
+    "title": "Day 5 - File Management and Workflow",
+    "section": "Using Zotero in Quarto",
+    "text": "Using Zotero in Quarto\nhttps://happygitwithr.com/ Github link\nQuarto essay template\nQuarto paper template\nQuarto CV template\nQuarto extensions for CV and articles",
     "crumbs": [
       "Day 5 - File Management and Workflow"
     ]
