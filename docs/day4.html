@@ -245,7 +245,11 @@ window.Quarto = {
   <li><a href="#markdown-text" id="toc-markdown-text" class="nav-link" data-scroll-target="#markdown-text"><strong>Markdown Text</strong></a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#additonal-links" id="toc-additonal-links" class="nav-link" data-scroll-target="#additonal-links">Additonal Links</a></li>
+  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
+  <li><a href="#additonal-links" id="toc-additonal-links" class="nav-link" data-scroll-target="#additonal-links">Additonal Links</a>
+  <ul class="collapse">
+  <li><a href="#latex" id="toc-latex" class="nav-link" data-scroll-target="#latex"><span class="math inline">\(\LaTeX\)</span></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -580,7 +584,7 @@ execute:
 <section id="markdown-text" class="level3">
 <h3 class="anchored" data-anchor-id="markdown-text"><strong>Markdown Text</strong></h3>
 <p>Markdown text is like any other text just with some special considerations.</p>
-<p>You can see the <code>help</code> section from R to see soem of the basic formatting tips.</p>
+<p>You can see the <code>help</code> section from R to see some of the basic formatting tips.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Markdownhelp.png" class="img-fluid figure-img"></p>
@@ -626,14 +630,22 @@ Links and images
 </div>
 </div>
 </div>
+</section>
+</section>
+</section>
+<section id="practice" class="level1">
+<h1>Practice</h1>
 <p>Let’s try all that we learnt</p>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<p>Exercise</p>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ol type="1">
 <li><p>Delete the existing code in the <code>.qmd</code> file that we created today.</p></li>
 <li><p>Add some simple mathematical operations from the exercises on Day 2 in the code chunk (like the previous exercise). Now, in the chunk set the options differently. You could play with different options that we learnt above and their values. Use <code>&lt;TAB&gt;</code> button to see different values that you can provide to chunk options.</p></li>
@@ -697,6 +709,7 @@ Links and images
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="in">geom_point( alpha = 0.5) +</span></span>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="in">geom_smooth(method = "lm")</span></span>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Tasks <strong>3</strong>, <strong>4</strong> and <strong>5</strong> use ggplot which is a part of tidyverse. Follow the tidyverse book from Day 1 for understanding them well.</p>
 <ol start="6" type="1">
 <li><p>Find out what the variables <code>v2x_libdem</code> and <code>e_gdppc</code> mean from the VDem Codebook <a href="https://v-dem.net/documents/38/V-Dem_Codebook_v14.pdf">here</a>. Write the details of the variable in the markdown text area of quarto explaining these variables.</p></li>
 <li><p>We added a least squares best fit line in the second plot. Write a basic equation in LaTex that looks like this:</p></li>
@@ -738,22 +751,19 @@ editor_options:
 </code></pre>
 </div>
 </div>
-</div>
-</section>
-</section>
 </section>
 <section id="additonal-links" class="level1">
 <h1>Additonal Links</h1>
+<p><a href="https://quarto.org/docs/guide/">Quarto Official Guide</a></p>
 <p><a href="https://r4ds.hadley.nz/quarto">Quarto R for datascience</a></p>
-<p>(https://quarto.org/docs/get-started/hello/rstudio.html)</p>
-<p>(https://www.appsilon.com/post/r-quarto-tutorial#get-started)</p>
-<p>(https://openscapes.github.io/quarto-website-tutorial/quarto-workflows/rstudio.html)</p>
-<p>(https://quarto.org/docs/gallery/).</p>
+<p><a href="https://quarto.org/docs/get-started/hello/rstudio.html">Quarto with RStudio</a></p>
+<section id="latex" class="level2">
+<h2 class="anchored" data-anchor-id="latex"><span class="math inline">\(\LaTeX\)</span></h2>
 <p>Follow <a href="https://yihui.org/tinytex/">these instructions</a> to install <code>library(tinytex)</code>.</p>
-<p>https://quarto.org/docs/guide/</p>
-<p>https://bookdown.org/Yuleng/introrlatex/introLaTeX.html</p>
+<p><a href="https://bookdown.org/Yuleng/introrlatex/introLaTeX.html">Intro to <span class="math inline">\(\LaTeX\)</span> in Markdown</a></p>
 
 
+</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
