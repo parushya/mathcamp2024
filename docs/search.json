@@ -294,7 +294,37 @@
     "href": "summary.html",
     "title": "Wrapping Up!",
     "section": "",
-    "text": "And one last thing!\nOver the next few days, you can access some of the basic qmd templates for writing papers and assignments on the box link here. Make sure to revisit by the time you have to write your first essay!.\nAs promised:",
+    "text": "We accomplished the following:",
+    "crumbs": [
+      "Wrapping Up!"
+    ]
+  },
+  {
+    "objectID": "summary.html#we-accomplished-the-following",
+    "href": "summary.html#we-accomplished-the-following",
+    "title": "Wrapping Up!",
+    "section": "",
+    "text": "Why code\nHow to handle data\nBasics of R, RStudio, Quarto and \\(\\LaTeX\\)\nBasics of reproducible and comprehensible coding practices\nEfficient File Management",
+    "crumbs": [
+      "Wrapping Up!"
+    ]
+  },
+  {
+    "objectID": "summary.html#what-we-could-not-cover-or-covered-partially",
+    "href": "summary.html#what-we-could-not-cover-or-covered-partially",
+    "title": "Wrapping Up!",
+    "section": "What we could not cover or covered partially:",
+    "text": "What we could not cover or covered partially:\n\nData Wrangling and Analysis with R: Particularly useful would be R for Data Science. The online book is one the the most useful sources to learn all the aspects of coding in R using tidyverse framework.\nZotero integration with RStudio: Follow the link here.\nGithub: This is an excellent tutorial\n\nThere are many other links which are attached to the pages for each day. It would be useful to revisit and explore them as you walk through your semesters.\nOver the next few days, you can access some of the basic qmd templates for writing papers and assignments on the box link here. Make sure to revisit by the time you have to write your first essay!.",
+    "crumbs": [
+      "Wrapping Up!"
+    ]
+  },
+  {
+    "objectID": "summary.html#and-as-promised-one-last-thing",
+    "href": "summary.html#and-as-promised-one-last-thing",
+    "title": "Wrapping Up!",
+    "section": "And as promised, one last thing!",
+    "text": "And as promised, one last thing!",
     "crumbs": [
       "Wrapping Up!"
     ]
