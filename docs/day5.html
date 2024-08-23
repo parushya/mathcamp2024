@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -181,7 +215,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Summary</span></a>
+ <span class="menu-text">Wrapping Up!</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -200,11 +234,13 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#file-management" id="toc-file-management" class="nav-link active" data-scroll-target="#file-management">File Management</a></li>
-  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">Workflow</a></li>
+  <li><a href="#software-session" id="toc-software-session" class="nav-link active" data-scroll-target="#software-session">Software Session</a>
+  <ul class="collapse">
   <li><a href="#r-projects" id="toc-r-projects" class="nav-link" data-scroll-target="#r-projects">R Projects</a></li>
-  <li><a href="#basic-setup-template" id="toc-basic-setup-template" class="nav-link" data-scroll-target="#basic-setup-template">Basic Setup Template</a></li>
-  <li><a href="#using-zotero-in-quarto" id="toc-using-zotero-in-quarto" class="nav-link" data-scroll-target="#using-zotero-in-quarto">Using Zotero in Quarto</a></li>
+  <li><a href="#here-package" id="toc-here-package" class="nav-link" data-scroll-target="#here-package"><code>here</code> package</a></li>
+  <li><a href="#folder-structure" id="toc-folder-structure" class="nav-link" data-scroll-target="#folder-structure">Folder Structure</a></li>
+  <li><a href="#takeaways" id="toc-takeaways" class="nav-link" data-scroll-target="#takeaways">Takeaways</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -230,28 +266,254 @@ window.Quarto = {
 </header>
 
 
-<section id="file-management" class="level2">
-<h2 class="anchored" data-anchor-id="file-management">File Management</h2>
-</section>
-<section id="workflow" class="level2">
-<h2 class="anchored" data-anchor-id="workflow">Workflow</h2>
-</section>
+<p><img src="rwar.webp" class="img-fluid"></p>
+<section id="software-session" class="level1">
+<h1>Software Session</h1>
+<ol type="1">
+<li><p>Using R Projects</p></li>
+<li><p><code>here</code> package</p></li>
+<li><p>Folder Structure</p></li>
+<li><p>Takeaways</p></li>
+</ol>
 <section id="r-projects" class="level2">
 <h2 class="anchored" data-anchor-id="r-projects">R Projects</h2>
+<p>We used the <code>setwd()</code> command till now to trace the files we need in our work. As your work expands, projects will have multiple datasets to be loaded, different subsidiary scripts to be used, and multiple outputs to be saved.</p>
+<p>A first order problem related to both file management and reproducability of code is the usage of file paths. Using <strong>absolute paths</strong>, like <code>~/User/MyName/Documents/.....</code> becomes cumbersome and also inhibits efficiency of reproducability. Every time someone else runs the script, they will have to change the file paths in all the instances in Rscripts or <code>.qmd</code> file to locate the related datasets as well as other objects. Similarly, there would be issues with saving objects in new places. A partially efficient way we used till now involved using <code>setwd()</code> to direct R to a new working directory; this is also called usage of <strong>relative paths</strong></p>
+<p><strong>R Projects</strong> is a built-in mechanism in RStudio for seamless file management and usage of relative paths.</p>
+<p>Let’s start by creating a new project. Click <code>File &gt; New Project</code>. Name the new project <code>govt-8001-dataessay</code>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-new-project" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-new-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="new-project.png" class="img-fluid figure-img" width="1172">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-new-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: To create new project: (top) first click New Directory, then (middle) click New Project, then (bottom) fill in the directory (project) name, choose a good subdirectory for its home and click Create Project. <a href="https://r4ds.hadley.nz/workflow-scripts">source</a>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Exercise</strong></p>
+<ol type="1">
+<li><p>Do this process again, this time creating a new project in the the existing directory. The existing directory should be the folder where you have been saving R scripts and <code>.qmd</code> file associated with math camp 2024.</p></li>
+<li><p>Go to the folder on your system, and click the <code>.RProj</code> file.</p></li>
+<li><p>Start a new <code>qmd</code> file like we did yesterday. Delete existing code except for YAML. Run <code>getwd()</code> command in console and see the difference.</p></li>
+<li><p>Start a new R code chunk (<code>cmd + option + I</code>) and load vdem dataset. Notice the change in behavior when you press <code>TAB</code> inside the <code>readRDS()</code> function.</p></li>
+</ol>
+</div>
+</div>
+</div>
 </section>
-<section id="basic-setup-template" class="level2">
-<h2 class="anchored" data-anchor-id="basic-setup-template">Basic Setup Template</h2>
+<section id="here-package" class="level2">
+<h2 class="anchored" data-anchor-id="here-package"><code>here</code> package</h2>
+<p>An efficient file and folder management system is going to be crucial as we move into working with serious projects. As stressed earlier, keeping and using all the files associated with a project in a comprehensible folder system is facilitated by R Projects. You would ideally want to create your own template for folder management that you follow across proejcts. For starters, the folder structure below is the one created for your data essay assignment in Govt 8001 or Quant 1.</p>
+<p>You can use the point-and-click fucntionality in your computers to create this strcuture. Later today, we will briefly go through an R script that do this programmatically.</p>
+<pre><code>📦 govt-8001-dataessay
+├─&nbsp;govt-dataessay.RProj
+000-setup.R
+├─&nbsp;001-eda.qmd
+├─&nbsp;002-analysis.qmd
+└─&nbsp;003-manuscript.qmd
+&nbsp;&nbsp;&nbsp;├─&nbsp;Data
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;├─&nbsp;Raw
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;├─&nbsp;Dataset1
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;├─&nbsp;dataset1.csv
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;└─&nbsp;codebook-dataset1.pdf
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;└─&nbsp;Dataset2
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;...dta
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─&nbsp;codebook-dataset2.pdf
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;└─&nbsp;Clean
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─&nbsp;Merged-df1-df2.csv
+&nbsp;&nbsp;&nbsp;├─&nbsp;Scripts
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;├─&nbsp;R-scripts
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;├─&nbsp;plotting-some-variable.R
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;└─&nbsp;exploring-different-models.R
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;├─&nbsp;Stata-Scripts
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;└─&nbsp;seeing-variable-labels.do
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;└─&nbsp;Python-Scripts
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─&nbsp;scraping-data-from-website.py
+&nbsp;&nbsp;&nbsp;└─&nbsp;Outputs
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;Plots
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;├─&nbsp;...jpeg
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;└─&nbsp;...png
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;Tables
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;└─&nbsp;.csv
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─&nbsp;Text
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─&nbsp;...txt</code></pre>
+<p><strong>Suggested folder structure for a Quant-1 project</strong></p>
+<p>While we learnt how to create or associate an <code>.RProj</code> with a folder, integrating it with <code>here()</code> function from the <code>here</code> package, makes things further smoother. Let’s do it with the following exercise.</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Exercise</strong></p>
+<ol type="1">
+<li><p>Go the RStudio window with <code>mathcamp2024</code> project. Check the extreme upper left corner to see if you are in the write window.</p></li>
+<li><p>In the qmd file we were working in, add an R chunk.</p></li>
+<li><p>Load the library <code>here</code> with the follwing code. Run the code line by line</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a> <span class="co"># See the output for each of the following lines</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">here</span>()</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">here</span>(<span class="st">"Datasets-mathcamp"</span>,<span class="st">"V-Dem-CY-Full+Others-v12.rds"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># syntax is</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># here("First subfolder from the root folder", "second subfolder",...., "file")</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>vdem_new <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"Datasets-mathcamp"</span>,<span class="st">"V-Dem-CY-Full+Others-v12.rds"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This is a cleaner syntax which when coupled with usage of R projects saves time in typing file paths and avoids issues when the project is run on some other computer system.</p>
+<p>Note: <code>here()</code> always notes the path from the main folder or the root directory where your <code>.RProj</code> file is located.</p>
+<p><strong>Save the files and close the <code>mathcamp2024</code> project window</strong></p>
+</div>
+</div>
+</div>
+<p>Make it a habit of using R Prohects and <code>here()</code> function in your scripts for writing portable code.</p>
+<p>You can read this quick and informative blogpost on using these two <a href="http://jenrichmond.rbind.io/post/how-to-use-the-here-package/">here</a>.</p>
 </section>
-<section id="using-zotero-in-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="using-zotero-in-quarto">Using Zotero in Quarto</h2>
-<p>https://happygitwithr.com/ Github link</p>
-<p>Quarto essay template</p>
-<p>Quarto paper template</p>
-<p>Quarto CV template</p>
-<p>Quarto extensions for CV and articles</p>
-<p>http://jenrichmond.rbind.io/post/how-to-use-the-here-package/</p>
+<section id="folder-structure" class="level2">
+<h2 class="anchored" data-anchor-id="folder-structure">Folder Structure</h2>
+<p>Let’s look at the other opened RStudio window. This is the one associated with <code>govt-8001-dataessay</code>.</p>
+<p>We ideally want a folder structure that is easily understandable to us and others.</p>
+<pre><code>📦 govt-8001-dataessay
+├─&nbsp;govt-dataessay.RProj
+000-setup.R
+├─&nbsp;001-eda.qmd
+├─&nbsp;002-analysis.qmd
+└─&nbsp;003-manuscript.qmd
+&nbsp;&nbsp;&nbsp;├─&nbsp;Data
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;├─&nbsp;Raw
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;├─&nbsp;Dataset1
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;├─&nbsp;dataset1.csv
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;└─&nbsp;codebook-dataset1.pdf
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;└─&nbsp;Dataset2
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;...dta
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─&nbsp;codebook-dataset2.pdf
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;└─&nbsp;Clean
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─&nbsp;Merged-df1-df2.csv
+&nbsp;&nbsp;&nbsp;├─&nbsp;Scripts
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;├─&nbsp;R-scripts
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;├─&nbsp;plotting-some-variable.R
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;└─&nbsp;exploring-different-models.R
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;├─&nbsp;Stata-Scripts
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;└─&nbsp;seeing-variable-labels.do
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;└─&nbsp;Python-Scripts
+&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─&nbsp;scraping-data-from-website.py
+&nbsp;&nbsp;&nbsp;└─&nbsp;Outputs
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;Plots
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;├─&nbsp;...jpeg
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;└─&nbsp;...png
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;Tables
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;└─&nbsp;.csv
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─&nbsp;Text
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─&nbsp;...txt</code></pre>
+<p>We can create this struture by using point and click system on our laptops. But since we might want to use the same folder structure repetitively it will make sense to be <strong>lazy</strong> and do it programmatically.</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Exercise</p>
+<ol type="1">
+<li><p>Download the <code>000-setup.R</code> from <a href="https://georgetown.app.box.com/file/1629650190568">here</a></p></li>
+<li><p>Place it in the <code>govt-8001-dataessay</code> folder.</p></li>
+<li><p>Open it in the opened RStudio window.</p></li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="in"># Name: 000-setup.R</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="in"># Author: Parushya</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="in"># Purpose: Creates main folders, subfolders in the main project directory</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="in"># Will also ensure that you have basic packages required to run the repository</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="in"># Date Created: 2020/10/07</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="in"># Checking if packages are installed and installing</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="in"># check.packages function: install and load multiple R packages.</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="in"># Found this function here: https://gist.github.com/smithdanielle/9913897 on 2019/06/17</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="in"># Check to see if packages are installed. Install them if they are not, then load them into the R session.</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="in">check.packages &lt;- function(pkg) {</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="in">  new.pkg &lt;- pkg[!(pkg %in% installed.packages()[, "Package"])]</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="in">  if (length(new.pkg)) {</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="in">    install.packages(new.pkg, dependencies = TRUE)</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="in">  sapply(pkg, require, character.only = TRUE)</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="in"># Check if packages are installed and loaded:</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="in">packages &lt;- c("janitor",  "tidyverse", "utils", "here")</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="in">check.packages(packages)</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="in"># Setting Directories and creating subfolders</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="in"># Creating Sub Folders</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="in">## Data</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="in">dir.create(file.path(paste0(here("Data")))) # Data Folder</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="in">dir.create(file.path(paste0(here("Data","Raw")))) # Raw Data sub-folder</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="in">dir.create(file.path(paste0(here("Data","Clean")))) # Clean Data sub-folder</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="in"># Scripts</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="in">dir.create(file.path(paste0(here("Scripts")))) # Scripts Folder</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="in">dir.create(file.path(paste0(here("Scripts","RScripts")))) # RScripts  sub-folder</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="in">dir.create(file.path(paste0(here("Scripts","Stata-Scripts")))) # Stata Scripts sub-folder</span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="in">dir.create(file.path(paste0(here("Scripts","Python-Scripts")))) # Python Scripts sub-folder</span></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="in"># Output</span></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="in">dir.create(file.path(paste0(here("Outputs")))) # Outputs Folder</span></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="in">dir.create(file.path(paste0(here("Outputs","figures")))) # Figures sub-folder</span></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="in">dir.create(file.path(paste0(here("Outputs","tables")))) # Tables sub-folder</span></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="in">dir.create(file.path(paste0(here("Outputs","text")))) # Text sub-folder</span></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>Run the file line-by-line. See the folder structure created in your main folder.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="takeaways">Takeaways</h2>
+<p>Here’s a quick workflow for starting a new project or assignment or paper.</p>
+<ol type="1">
+<li><p>Make a new folder in your computer with apt name. Ideally, <code>govt-&lt;coursecode&gt;-&lt;project&gt;</code>.</p></li>
+<li><p>Start RStudio.</p></li>
+<li><p>Create a new Rstudio Project by clicking <code>File &gt; New Project</code>. Name it <code>govt-&lt;coursecode&gt;-&lt;project</code>.</p></li>
+<li><p>Check if now your RStudio Window shows the project name on top right corner. If not, go to folder and double-click the <code>.RProj</code> file.</p></li>
+<li><p>Paste the <code>000-setup.R</code> file in the main project folder. Open it in the same Rstudio window with the project and run the complete file. Your folder structure is created.</p></li>
+<li><p>Copy your raw data in <code>Data/Raw</code> folder. Similarly, your scripts in <code>Scripts/RScripts</code> folder</p></li>
+<li><p>Start your new <code>.qmd</code> file and save it in the main folder.</p></li>
+<li><p>Remember to use <code>here()</code> package extensively in both scripts and quarto file when loading or saving the data.</p></li>
+<li><p>You can always zip the whole project folder for sharing. The receiver will just need to unzip and run the code after starting the associated <code>.RProj</code> file, without changing file paths on their computer.</p></li>
+</ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -671,8 +933,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="Summary">
-        <span class="nav-page-text">Summary</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./summary.html" class="pagination-link" aria-label="Wrapping Up!">
+        <span class="nav-page-text">Wrapping Up!</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
